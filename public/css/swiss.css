@@ -1,0 +1,25 @@
+.menuTitle {
+	color: #FF2B2B !important;
+}
+
+.mukheroHack {
+	margin-top: 60px;
+}
+
+.panel-red-heading {
+	background-color: #FF2B2B !important;
+}
+
+.sub-panel-color-heading {
+	background-color: #3E3E3E !important;
+}
+
+.panel-heading-text {
+	color: white;
+}
+
+.form-group.required .control-label:after {
+	content: "*";
+	color: red;
+	margin-left: 4px;
+}
