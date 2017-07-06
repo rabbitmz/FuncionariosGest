@@ -61,13 +61,23 @@
 							['for' => 'employerActivity' ]) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::text('employerActivity',null,['class' => 'form-control ',
-							'id' => 'employerActivity', 'placeholder' => 'dd/mm/aaaa']) !!}</div>
+							'id' => 'employerActivity']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('lcategory',trans('messages.collaborator.laboral.contract.category').':',
 							['for' => 'category' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::select('category', ['pedreiro' =>
 							'Pedreiro', 'Auto' => 'Auto Mecanico'], null, ['class' =>
 							'form-control ', 'id' => 'category']) !!}</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-2">{!!
+							Form::label('lsalary',trans('messages.collaborator.laboral.salary').':',
+							['for' => 'salary' ]) !!}</div>
+						<div class="col-lg-2">{!! Form::select('salary', ['1000' =>
+							'1000', '2000' => '2000'], null, ['class' =>
+							'form-control ', 'id' => 'salary']) !!}</div>
 					</div>
 				</div>
 			</div>

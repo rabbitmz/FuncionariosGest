@@ -98,5 +98,17 @@ class ColaboratorController extends Controller
     {
     	return view("colaborator.create3");
     }
-    
+    public function onPageFour(Request $request)
+    {
+    	return view("colaborator.create4");
+    }
+    public function onPageFive(Request $request)
+    {
+    	return view("colaborator.create5");
+    }
+    public function onPageSix(Request $request)
+    {
+    	//Save na base	
+    	return view("colaborator.create6");
+    }
 }

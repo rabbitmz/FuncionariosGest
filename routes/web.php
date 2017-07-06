@@ -21,3 +21,7 @@ Route::get("/createColaborator", ['as' => 'createEmployee', 'uses' => 'Colaborat
 Route::post("/createColaborator/page1", ['uses' => 'ColaboratorController@onPageOne']);
 Route::post("/createColaborator/page2", ['uses' => 'ColaboratorController@onPageTwo']);
 Route::post("/createColaborator/page3", ['uses' => 'ColaboratorController@onPageThree']);
+Route::post("/createColaborator/page4", ['uses' => 'ColaboratorController@onPageFour']);
+Route::post("/createColaborator/page5", ['uses' => 'ColaboratorController@onPageFive']);
+Route::post("/createColaborator/page6", ['uses' => 'ColaboratorController@onPageSix']);
+

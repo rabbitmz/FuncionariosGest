@@ -103,7 +103,7 @@
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
-				<h4 class="modal-title" id="editor-title">{{__('collaborator.work.unofficial.add.title')
+				<h4 class="modal-title" id="editor-title">{{__('messages.collaborator.work.unofficial.add.title')
 					}}</h4>
 			</div>
 			<div class="modal-body">
