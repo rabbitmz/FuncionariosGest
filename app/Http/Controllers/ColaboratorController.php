@@ -13,7 +13,8 @@ class ColaboratorController extends Controller
      */
     public function index()
     {
-        //
+        //Get all from BD 
+    	return view("listAll.listAll");
     }
 
     /**
@@ -35,6 +36,7 @@ class ColaboratorController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -45,7 +47,8 @@ class ColaboratorController extends Controller
      */
     public function show($id)
     {
-        //
+        //get colaborator by id 
+    	return view("viewColaborator.viewColaborator3");
     }
 
     /**
@@ -56,7 +59,8 @@ class ColaboratorController extends Controller
      */
     public function edit($id)
     {
-        //
+    	//get colaborator by id
+    	return view("editColaborator.editColaborator3");
     }
 
     /**
@@ -111,4 +115,53 @@ class ColaboratorController extends Controller
     	//Save na base	
     	return view("colaborator.create6");
     }
+    
+    public function getViewColaboratorSearchView()
+    {
+    	return view("viewColaborator.viewColaborator1");
+    } 
+    
+    public function getColaboratorByNameOrDocumentIdentification()
+    {	
+    	//Get from BD
+    	return view("viewColaborator.viewColaborator2");
+    }
+	
+//     edit
+    public function getEditColaboratorSearchView()
+    {
+    	return view("editColaborator.editColaborator1");
+    } 
+    public function getColaboratorByNameOrDocumentIdentificationEdit()
+    {
+    	//Get from BD
+    	return view("editColaborator.editColaborator2");
+    }
+    public function onEditPageFour(Request $request)
+    {
+    	return view("editColaborator.editColaborator4");
+    }
+    public function onEditPageFive(Request $request)
+    {
+    	return view("editColaborator.editColaborator5");
+    }
+    public function onEditPageSix(Request $request)
+    {
+    	return view("editColaborator.editColaborator6");
+    }
+    public function onEditPageSeven(Request $request)
+    {
+    	return view("editColaborator.editColaborator7");
+    }
+    public function onEditPageEight(Request $request)
+    {
+    	return view("editColaborator.editColaborator8");
+    }
+    public function onEditPageNine(Request $request)
+    {
+    	//Save na base
+    	return view("editColaborator.editColaborator9");
+    }
+    
+  
 }

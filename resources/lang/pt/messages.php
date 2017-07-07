@@ -2,15 +2,15 @@
 return [ 
 		// ## MENSAGEM DOS MENUS
 		// App name
-		'appName' => 'Funcion&aacute;riosGest',
+		'appName' => 'ProfissionaisGest',
 		// Gestao de funcionarios
-		'employeeManagement' => 'Gest&atilde;o de funcion&aacute;rios',
-		'createEmployee' => 'Cria&ccedil;&atilde;o de funcion&aacute;rio',
-		'editEmployee' => 'Edi&ccedil;&atilde;o de funcion&aacute;rio',
-		'viewEmployee' => 'Visualiza&ccedil;&atilde;o de funcion&aacute;rio',
+		'employeeManagement' => 'Gest&atilde;o de Profissionais',
+		'createEmployee' => 'Cria&ccedil;&atilde;o de Profissionais',
+		'editEmployee' => 'Edi&ccedil;&atilde;o de Profissionais',
+		'viewEmployee' => 'Visualiza&ccedil;&atilde;o de Profissionais',
 		
 		// Listagaem de funcionarios
-		'search' => 'Pesquisa',
+		'search' => 'Listar',
 		// Extracao de relatorios
 		'report' => 'Extra&ccedil;&atilde;o de rel&aacute;torios', 
 		
@@ -24,8 +24,11 @@ return [
 		'back' => 'Voltar',
 	
 		// ##CRIACAO DE COLABORADOR
-		'collaborator.title' => 'Cria&ccedil;&atilde;o de Colaborador',
-		'collaborator.pageOne.title' => 'Cria&ccedil;&atilde;o de Colaborador - Experi&ecirc;ncia de Trabalho',
+		'collaborator.title' => 'Cria&ccedil;&atilde;o de Profissional',
+		'collaborator.pageOne.title' => 'Cria&ccedil;&atilde;o de Profissional - Experi&ecirc;ncia de Trabalho',		
+		'collaborator.edit.pageOne.title' => 'Edi&ccedil;&atilde;o de Profissional',
+		'collaborator.listAll.title' => 'Listagem',
+		'collaborator.page.subtitle1' => 'Dados Pessoais',		
 		'collaborator.page.subtitle1' => 'Dados Pessoais',		
 		'collaborator.page.subtitle2' => 'Endere&ccedil;o',		
 		'collaborator.page.subtitle3' => 'Habilita&ccedil;&otilde;s Liter&aacute;rias',		
@@ -47,6 +50,7 @@ return [
 		'collaborator.neighborhood' => 'Bairro',
 		'collaborator.cell' => 'Celula',
 		'collaborator.identificationDocument' => 'N&deg;',
+		'collaborator.identificationDocument.extended' => 'Documento de Identifa&ccedil;&atilde;o',
 		'collaborator.identificationDocument.type' => 'Tipo de Documento de Identifa&ccedil;&atilde;o',
 		'collaborator.identificationDocument.type.bi' => 'BI',
 		'collaborator.identificationDocument.type.passport' => 'Passport',		
@@ -89,7 +93,15 @@ return [
 		'collaborator.laboral.unemployed.startDate' => 'Data de inicio de desemprego',		
 		'collaborator.laboral.salary' => 'Rendimento',
 		
+		'collaborator.listAll.subtitle' => 'Listagem de todos os Profissionais',
 		'collaborator.aditional.information' => 'Informa&ccedil;&atilde;o adicional',
 		
+		
+		//Pesquisar 
+		'collaborator.search.title' => 'Pesquisar',
+		'collaborator.search.subtitle1' => 'Por Nome',
+		'collaborator.search.subtitle2' => 'Por Documento Identifa&ccedil;&atilde;o',
+		//vizualizacao
+		'collaborator.view.title' => 'Visualiza&ccedil;&atilde;o de Profissional',
 		
 ];

@@ -17,97 +17,44 @@
 			</div>
 
 			<div class="panel-body">
-				<table class="table" id="listAllTable" data-paging="true" data-paging-size="3">
+				<table class="table" id="listAllTable" data-paging="true" >
 					<thead>
 						<tr>
 							<th data-name="name">{{__('messages.collaborator.name') }}</th>
 							<th data-name="docId">{{__('messages.collaborator.identificationDocument.extended')}}
-
-
 							
 							
 							<th data-name="gender">{{__('messages.collaborator.gender')}}
 							
 							<th data-name="work1">{{__('messages.collaborator.profession')}}
-
-
 							
 							
 							<th data-name="work2">{{__('messages.collaborator.profession')}}
-
-
 							
 							
 							<th data-name="provincia">{{__('messages.collaborator.citizenship')}}
-
-
 							
 							
 							<th data-name="city">{{__('messages.collaborator.city')}}
-						
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
+<!-- 					fazer um for com todos os colaboratos encontrados, criar um botao com a href contendo o id de cada um dos colaboratos -->
 						<tr>
-							<td>Maria Andre</td>
-							<td>454521215478A</td>
-							<td>Feminino</td>
-							<td>Engenheira Civil</td>
-							<td>Tecnica de Laboratorio</td>
-							<td>Maputo</td>
-							<td>Maputo</td>
-						</tr>
-						<tr>
-							<td>Joao Mateus</td>
-							<td>447845213457A</td>
-							<td>Masculino</td>
-							<td>Pedreiro</td>
-							<td>Tecnica de Laboratorio</td>
-							<td>Maputo</td>
-							<td>Matola</td>
-						</tr>
-						<tr>
-							<td>Nelio Joao</td>
-							<td>545745213257A</td>
-							<td>Masculino</td>
-							<td>Pedreiro</td>
-							<td>Canalizador</td>
-							<td>Nampula</td>
-							<td>Nacala</td>
-						</tr>
-							<tr>
-							<td>Mateus Joao</td>
-							<td>452315467898A</td>
-							<td>Feminino</td>
-							<td>Canalizador</td>
-							<td>Motorista</td>
-							<td>Maputo</td>
-							<td>Maputo</td>
-						</tr>
-						<tr>
-							<td>Jose Cremildo</td>
-							<td>1111111114141A</td>
-							<td>Masculino</td>
-							<td>Pedreiro</td>
-							<td>Tecnica de Laboratorio</td>
-							<td>Maputo</td>
-							<td>Matola</td>
-						</tr>
-						<tr>
-							<td>Kelia Marlene</td>
-							<td>11246564645E</td>
-							<td>Masculino</td>
-							<td>Pedreiro</td>
-							<td>Canalizador</td>
-							<td>Nampula</td>
-							<td>Nacala</td>
+						<td>Marcos Mateus</td>
+						<td>123456879123Z</td>
+						<td>Masculino</td>
+						<td>Pedreiro</td>
+						<td>Canalizador</td>
+						<td>Maputo Cidade</td>
+						<td>Maputo</td>
+						<td>{{link_to_route('editColaborator', $title = null, $parameters = [1], $attributes = [])}}</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
-
-		
 		{{Form::close()}}
 	</div>
 </div>
@@ -117,6 +64,5 @@
 $(function($){
 	$('#listAllTable').footable();
 });
-
 </script>
 @endsection

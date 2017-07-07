@@ -25,3 +25,22 @@ Route::post("/createColaborator/page4", ['uses' => 'ColaboratorController@onPage
 Route::post("/createColaborator/page5", ['uses' => 'ColaboratorController@onPageFive']);
 Route::post("/createColaborator/page6", ['uses' => 'ColaboratorController@onPageSix']);
 
+
+Route::get("/listAll", ['as' => 'listAll', 'uses' => 'ColaboratorController@index']);
+
+
+Route::get("/viewColaborator", ['as' => 'viewColaborator', 'uses' => 'ColaboratorController@getViewColaboratorSearchView']);
+Route::post("/viewColaborator/page2", ['uses' => 'ColaboratorController@getColaboratorByNameOrDocumentIdentification']);
+Route::get("/showColaborator/{id}", ['as' => 'showColaborator', 'uses' => 'ColaboratorController@show']);
+
+
+Route::get("/editColaborator", ['as' => 'editEmployee', 'uses' => 'ColaboratorController@getEditColaboratorSearchView']);
+Route::post("/editColaborator/page2", ['uses' => 'ColaboratorController@getColaboratorByNameOrDocumentIdentificationEdit']);
+Route::get("/editColaborator/{id}", ['as' => 'editColaborator', 'uses' => 'ColaboratorController@edit']);
+Route::post("/editColaborator/page4", ['uses' => 'ColaboratorController@onEditPageFour']);
+Route::post("/editColaborator/page5", ['uses' => 'ColaboratorController@onEditPageFive']);
+Route::post("/editColaborator/page6", ['uses' => 'ColaboratorController@onEditPageSix']);
+Route::post("/editColaborator/page7", ['uses' => 'ColaboratorController@onEditPageSeven']);
+Route::post("/editColaborator/page8", ['uses' => 'ColaboratorController@onEditPageEight']);
+Route::post("/editColaborator/page9", ['uses' => 'ColaboratorController@onEditPageNine']);
+

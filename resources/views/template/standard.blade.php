@@ -32,11 +32,11 @@
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="/createColaborator">{{ __('messages.createEmployee') }}</a></li>
-							<li><a href="#">{{ __('messages.editEmployee') }}</a></li>
-							<li><a href="#">{{ __('messages.viewEmployee') }}</a></li>
+							<li><a href="/editColaborator">{{ __('messages.editEmployee') }}</a></li>
+							<li><a href="/viewColaborator">{{ __('messages.viewEmployee') }}</a></li>
+							<li><a href="/listAll">{{ __('messages.search') }}</a></li>
 						</ul>
 						</li>
-					<li><a href="#">{{ __('messages.search') }}</a></li>
 					<li><a href="#">{{ __('messages.report') }}</a></li>
 				</ul>
 			</div>
