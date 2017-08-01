@@ -81,12 +81,7 @@
 
 				<div class="form-group">
 					<div class="row">
-						<div class="col-lg-2">{!!
-							Form::label('lnationality',trans('messages.collaborator.nationality').'
-							:', ['for' => 'nationality' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('nationality',
-							['Mocambique' => 'Mocambicana', 'AfricaDoSul' => 'Sul Africana'],
-							null, ['class' => 'form-control ', 'id' => 'nationality']) !!}</div>
+
 						<div class="col-lg-2">{!!
 							Form::label('lnationality',trans('messages.collaborator.citizenship').'
 							:', ['for' => 'nationality' ]) !!}</div>
@@ -114,34 +109,46 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
+							Form::label('llocality',trans('messages.collaborator.locality').'
+							:', ['for' => 'nationality' ]) !!}</div>
+						<div class="col-lg-4">{!! Form::select('llocality', ['Magude' =>
+							'Magude', 'Bunga' => 'Bunga'], null, ['class' => 'form-control ',
+							'id' => 'llocality']) !!}</div>
+						<div class="col-lg-2">{!!
 							Form::label('lneighborhood',trans('messages.collaborator.neighborhood').'
 							:', ['for' => 'neighborhood' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::text('neighborhood',null,['class'
+						<div class="col-lg-4">{!! Form::text('neighborhood',null,['class'
 							=> 'form-control ', 'id' => 'neighborhood']) !!}</div>
 
-						<div class="col-lg-2">{!!
-							Form::label('lstreet',trans('messages.collaborator.street').' :',
-							['for' => 'street' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::text('street',null,['class' =>
-							'form-control ', 'id' => 'street']) !!}</div>
-						<div class="col-lg-2">{!!
-							Form::label('lblock',trans('messages.collaborator.block').' :',
-							['for' => 'block' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::text('block',null,['class' =>
-							'form-control ', 'type'=>'Number','id' => 'block']) !!}</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
+							Form::label('lstreet',trans('messages.collaborator.street').' :',
+							['for' => 'street' ]) !!}</div>
+						<div class="col-lg-4">{!! Form::text('street',null,['class' =>
+							'form-control ', 'id' => 'street']) !!}</div>
+						<div class="col-lg-2">{!!
+							Form::label('lblock',trans('messages.collaborator.block').' :',
+							['for' => 'block' ]) !!}</div>
+						<div class="col-lg-4">{!! Form::text('block',null,['class' =>
+							'form-control ', 'type'=>'Number','id' => 'block']) !!}</div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-2">{!!
 							Form::label('lcell',trans('messages.collaborator.cell').' :',
 							['for' => 'cell' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::text('cell',null,['class' =>
+						<div class="col-lg-4">{!! Form::text('cell',null,['class' =>
 							'form-control ', 'type'=>'Number','id' => 'block']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('lCity',trans('messages.collaborator.house').' :',
 							['for' => 'city' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::text('house',null,['class' =>
+						<div class="col-lg-4">{!! Form::text('house',null,['class' =>
 							'form-control ', 'type'=>'Number','id' => 'house']) !!}</div>
 					</div>
 				</div>
@@ -162,24 +169,43 @@
 						<div class="col-lg-2">{!! Form::select('educationLevel', ['WITH'
 							=> 'Com Escolaridade', 'WITHOUT' => 'Sem Escolaridade'], null,
 							['class' => 'form-control ', 'id' => 'educationLevel']) !!}</div>
+
+					</div>
+					<div class="row">
 						<div id="educationLevelSection">
-							<div class="col-lg-2">{!!
-								Form::label('lgeneralEducation',trans('messages.collaborator.educationLevel.generalEducation').'
-								:', ['class' => 'radio-inline','for' => 'generalEducation' ])
-								!!} {!! Form::checkbox('generalEducation', 'generalEducation')
-								!!}</div>
-							<div class="col-lg-2 col-lg-offset-1">{!!
-								Form::label('lgeneralEducation',trans('messages.collaborator.educationLevel.technicalEducation').'
-								:', ['class' => 'radio-inline','for' => 'technicalEducation' ])
-								!!} {!! Form::checkbox('technicalEducation',
-								'technicalEducation') !!}</div>
-							<div class="col-lg-2 col-lg-offset-1">{!!
-								Form::label('lgeneralEducation',trans('messages.collaborator.educationLevel.university').'
-								:', ['class' => 'radio-inline','for' => 'university' ]) !!} {!!
-								Form::checkbox('university', 'university') !!}</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-lg-2">{!!
+										Form::label('lgeneralEducation',trans('messages.collaborator.educationLevel.generalEducation').'
+										:', ['class' => 'radio-inline','for' => 'generalEducation' ])
+										!!} {!! Form::checkbox('generalEducation', 'generalEducation')
+										!!}</div>
+									<div class="col-lg-2 col-lg-offset-3">{!!
+										Form::label('lgeneralEducation',trans('messages.collaborator.educationLevel.technicalEducation').'
+										:', ['class' => 'radio-inline','for' => 'technicalEducation'
+										]) !!} {!! Form::checkbox('technicalEducation',
+										'technicalEducation') !!}</div>
+									<div class="col-lg-2 col-lg-offset-3">{!!
+										Form::label('lgeneralEducation',trans('messages.collaborator.educationLevel.university').'
+										:', ['class' => 'radio-inline','for' => 'university' ]) !!}
+										{!! Form::checkbox('university', 'university') !!}</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-lg-2">{!!
+										Form::label('lschooLevel',trans('messages.collaborator.school.level').'
+										:', ['for' => 'schooLevel' ]) !!}</div>
+									<div class="col-lg-2">{!! Form::select('schooLevel', ['1' => '1
+										Classe', '2' => '2 Classe','3' => '3 Classe','4' => '4
+										Classe','5' => '5 Classe','6' => '6 Classe','7' => '7
+										Classe','8' => '8 Classe','9' => '9 Classe','10' => '10
+										Classe','11' => '11 Classe','12' => '12 Classe'], null,
+										['class' => 'form-control ', 'id' => 'schooLevel']) !!}</div>
+								</div>
+							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -201,7 +227,7 @@
 						<div class="col-lg-2">{!!
 							Form::label('lEmail',trans('messages.collaborator.email').' :',
 							['for' => 'email' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::text('email',null,['class' =>
+						<div class="col-lg-4">{!! Form::text('email',null,['class' =>
 							'form-control ', 'type'=>'email','id' => 'email']) !!}</div>
 					</div>
 				</div>

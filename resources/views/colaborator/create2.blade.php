@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="panel-body">
-		{{Form::open(['url' => '/createColaborator/page2'])}}
+		{{Form::open(['url' => '/createColaborator/page3'])}}
 		<div class="panel panel-default">
 			<div class="panel-heading sub-panel-color-heading">
 				<span class="panel-heading-text"> {{
@@ -19,9 +19,9 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('lprofession1',trans('messages.collaborator.profession').'
-							1 :', ['for' => 'profession1' ]) !!}</div>
-						<div class="col-lg-6">{!! Form::select('profession1', ['pedreiro'
+							Form::label('lprofession1',trans('messages.collaborator.profession.primary').'
+							:', ['for' => 'profession1' ]) !!}</div>
+						<div class="col-lg-3">{!! Form::select('profession1', ['pedreiro'
 							=> 'Pedreiro', 'canalizador' => 'Canalizador'], null, ['class' =>
 							'form-control ', 'id' => 'profession1']) !!}</div>
 						<div class="col-lg-2	">{!!
@@ -30,6 +30,9 @@
 						<div class="col-lg-2">{!!
 							Form::text('yearsOfExperience',null,['class' => 'form-control ',
 							'id' => 'yearsOfExperience']) !!}</div>
+						<div class="col-lg-3">{!! Form::select('level1', ['MASTER' =>
+							'Mestre', 'HELPER' => 'Ajudante','ASSISTANT' => 'Auxiliar'],
+							null, ['class' => 'form-control ', 'id' => 'profession1']) !!}</div>
 					</div>
 				</div>
 
@@ -37,9 +40,9 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('lprofession2',trans('messages.collaborator.profession').'
-							2 :', ['for' => 'profession2' ]) !!}</div>
-						<div class="col-lg-6">{!! Form::select('profession1', ['pedreiro'
+							Form::label('lprofession2',trans('messages.collaborator.profession.other').'
+							:', ['for' => 'profession2' ]) !!}</div>
+						<div class="col-lg-3">{!! Form::select('profession1', ['pedreiro'
 							=> 'Pedreiro', 'canalizador' => 'Canalizador'], null, ['class' =>
 							'form-control ', 'id' => 'profession2']) !!}</div>
 						<div class="col-lg-2	">{!!
@@ -48,6 +51,9 @@
 						<div class="col-lg-2">{!!
 							Form::text('yearsOfExperience',null,['class' => 'form-control ',
 							'id' => 'yearsOfExperience']) !!}</div>
+						<div class="col-lg-3">{!! Form::select('level2', ['MASTER' =>
+							'Mestre', 'HELPER' => 'Ajudante','ASSISTANT' => 'Auxiliar'],
+							null, ['class' => 'form-control ', 'id' => 'profession1']) !!}</div>
 					</div>
 				</div>
 
@@ -66,6 +72,8 @@
 					<thead>
 						<tr>
 							<th data-name="workArea">{{__('messages.collaborator.work.area')
+								}}</th>
+							<th data-name="levelWork">{{__('messages.collaborator.experience.level')
 								}}</th>
 							<th data-name="startedOn" data-breakpoints="xs sm"
 								data-type="date" data-format-string="MMMM Do YYYY">{{__('messages.collaborator.work.unofficial.date.initial')}}</th>
@@ -113,6 +121,14 @@
 					<div class="col-sm-9">{!! Form::select('workArea', ['autoMecanico'
 						=> 'Auto Mecanico', 'Soldadura' => 'Soldadura'], null, ['class' =>
 						'form-control required', 'id' => 'workArea']) !!}</div>
+				</div>
+				
+				<div class="form-group required">
+					<label for="levelInformal" class="col-sm-3 control-label">{{__('messages.collaborator.experience.level')
+						}}</label>
+						<div class="col-sm-9">{!! Form::select('levelInformal', ['MASTER' =>
+							'Mestre', 'HELPER' => 'Ajudante','ASSISTANT' => 'Auxiliar'],
+							null, ['class' => 'form-control ', 'id' => 'levelInformal']) !!}</div>					
 				</div>
 				<div class="form-group required">
 					<label for="startedOn" class="col-sm-3 control-label">{{__('messages.collaborator.work.unofficial.date.initial')

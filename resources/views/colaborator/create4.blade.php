@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="panel-body">
-		{{Form::open(['url' => '/createColaborator/page4'])}}
+		{{Form::open(['url' => '/createColaborator/page5'])}}
 		<!-- 	Competencias na area -->
 		<div class="panel panel-default">
 			<div class="panel-heading sub-panel-color-heading">

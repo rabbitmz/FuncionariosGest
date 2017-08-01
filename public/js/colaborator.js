@@ -74,6 +74,7 @@ $(document).ready(function(){
 			editRow: function(row){
 				var values = row.val();
 				$editor.find('#workArea').val(values.workArea);
+				$editor.find('#levelInformal').val(values.levelInformal);
 				$editor.find('#startedOn').val(moment(values.startedOn, 'DD-MM-YYYY'));
 				$editor.find('#finishOn').val(moment(values.finishOn, 'DD-MM-YYYY'));
 
@@ -97,6 +98,7 @@ $(document).ready(function(){
 		var row = $modal.data('row'),
 			values = {
 				workArea: $editor.find('#workArea').val(),
+				levelInformal: $editor.find('#levelInformal').val(),
 				startedOn: moment($editor.find('#startedOn').val(), 'DD-MM-YYYY'),
 				finishOn: moment($editor.find('#finishOn').val(), 'DD-MM-YYYY')
 			};

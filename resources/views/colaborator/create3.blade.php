@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="panel-body">
-		{{Form::open(['url' => '/createColaborator/page3'])}}
+		{{Form::open(['url' => '/createColaborator/page4'])}}
 		<!-- 	SITUACAO LABORAL -->
 		<div class="panel panel-default">
 			<div class="panel-heading sub-panel-color-heading">
@@ -52,32 +52,52 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('lemployer',trans('messages.collaborator.laboral.employer').':',
-							['for' => 'employer' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::text('employer',null,['class' =>
-							'form-control ', 'id' => 'employer']) !!}</div>
+							Form::label('lsalary',trans('messages.collaborator.laboral.salary').':',
+							['for' => 'salary' ]) !!}</div>
+						<div class="col-lg-2">{!! Form::select('salary', ['1000' =>
+							'1000', '2000' => '2000'], null, ['class' => 'form-control ',
+							'id' => 'salary']) !!}</div>
 						<div class="col-lg-2">{!!
-							Form::label('lemployerActivity',trans('messages.collaborator.laboral.employer.activity').':',
-							['for' => 'employerActivity' ]) !!}</div>
+							Form::label('lcontractDuration',trans('messages.collaborator.laboral.contractDuration').':',
+							['for' => 'contractDuration' ]) !!}</div>
+						<div class="col-lg-2">{!! Form::select('contractDuration', ['1' =>
+							'1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6',
+							'7' => '7', '8' => '8', '9' => '9'], null, ['class' =>
+							'form-control ', 'id' => 'contractDuration']) !!}</div>
+
 						<div class="col-lg-2">{!!
-							Form::text('employerActivity',null,['class' => 'form-control ',
-							'id' => 'employerActivity']) !!}</div>
-						<div class="col-lg-2">{!!
-							Form::label('lcategory',trans('messages.collaborator.laboral.contract.category').':',
+							Form::label('lemployeeWorkArea',trans('messages.collaborator.laboral.contract.employee.work.Area').':',
 							['for' => 'category' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('category', ['pedreiro' =>
-							'Pedreiro', 'Auto' => 'Auto Mecanico'], null, ['class' =>
-							'form-control ', 'id' => 'category']) !!}</div>
+						<div class="col-lg-2">{!! Form::select('employeeWorkArea',
+							['pedreiro' => 'Pedreiro', 'Auto' => 'Auto Mecanico'], null,
+							['class' => 'form-control ', 'id' => 'employeeWorkArea']) !!}</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('lsalary',trans('messages.collaborator.laboral.salary').':',
-							['for' => 'salary' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('salary', ['1000' =>
-							'1000', '2000' => '2000'], null, ['class' =>
-							'form-control ', 'id' => 'salary']) !!}</div>
+							Form::label('lemployer',trans('messages.collaborator.laboral.employer').':',
+							['for' => 'employer' ]) !!}</div>
+						<div class="col-lg-6">{!! Form::text('employer',null,['class' =>
+							'form-control ', 'id' => 'employer']) !!}</div>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-2">{!!
+							Form::label('lemployerCategory',trans('messages.collaborator.laboral.employer.category').':',
+							['for' => 'employerCategory' ]) !!}</div>
+						<div class="col-lg-2">{!! Form::select('employerCategory',
+							['pedreiro' => 'Pedreiro', 'Auto' => 'Auto Mecanico'], null,
+							['class' => 'form-control ', 'id' => 'employerCategory']) !!}</div>
+						<div class="col-lg-2">{!!
+							Form::label('lemployerActivity',trans('messages.collaborator.laboral.employer.activity').':',
+							['for' => 'employerActivity' ]) !!}</div>
+						<div class="col-lg-2">{!! Form::select('employerActivity',
+							['pedreiro' => 'Pedreiro', 'Auto' => 'Auto Mecanico'], null,
+							['class' => 'form-control ', 'id' => 'employerActivity']) !!}</div>
+
 					</div>
 				</div>
 			</div>

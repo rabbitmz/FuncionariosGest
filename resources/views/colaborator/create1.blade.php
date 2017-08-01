@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="panel-body">
-		{{Form::open(['url' => '/createColaborator/page5'])}}
+		{{Form::open(['url' => '/createColaborator/page2'])}}
 		<!-- 	cursos na area -->
 		<div class="panel panel-default">
 			<div class="panel-heading sub-panel-color-heading">
@@ -36,15 +36,7 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default">
-			<div class="panel-heading sub-panel-color-heading">
-				<span class="panel-heading-text"> {{
-					__('messages.collaborator.aditional.information') }}</span>
-			</div>
-			<div class="panel-body">
-				{{ Form::textarea('aditionalInformation', null, ['size' => '115x5']) }}
-			</div>
-		</div>
+
 
 		<div class="row">
 			<div class="col-lg-12 ">{!!Form::submit('Seguinte',['class' => 'btn
@@ -66,9 +58,19 @@
 				</div>
 				<div class="modal-body">
 					<div class="form-group required">
+						<label for="courseCategory" class="col-sm-3 control-label">{{__('messages.collaborator.course.category')}}</label>
+						<div class="col-sm-9">{!! Form::select('courseCategory',
+							['Categoria1' => 'Categoria 1', 'Categoria 2' => 'Categoria
+							2','Categoria3' => 'Categoria 3', 'Categoria4' => 'Outro' ],
+							null, ['class' => 'form-control required', 'id' =>
+							'courseCategory']) !!}</div>
+					</div>
+					<div class="form-group required">
 						<label for="course" class="col-sm-3 control-label">{{__('messages.collaborator.course.name')}}</label>
-						<div class="col-sm-9">{!!Form::text('course',null,['class' =>
-							'form-control ', 'id' => 'course']) !!}</div>
+						<div class="col-sm-9">{!! Form::select('course', ['course1' =>
+							'Curso 1', 'course2' => 'Curso 2','course3' => 'Curso 3',
+							'course4' => 'Curso 4' ], null, ['class' => 'form-control
+							required', 'id' => 'course']) !!}</div>
 					</div>
 					<div class="form-group required">
 						<label for="courseGraduationDate" class="col-sm-3 control-label">
@@ -80,17 +82,12 @@
 					</div>
 
 					<div class="form-group required">
-						<label for="courseCategory" class="col-sm-3 control-label">{{__('messages.collaborator.course.category')}}</label>
-						<div class="col-sm-9">{!! Form::select('courseCategory',
-							['Categoria1' => 'Categoria 1', 'Categoria 2' => 'Categoria
-							2','Categoria3' => 'Categoria 3', 'Categoria4' => 'Categoria 4'
-							], null, ['class' => 'form-control required', 'id' =>
-							'courseCategory']) !!}</div>
-					</div>
-					<div class="form-group required">
 						<label for="institutionName" class="col-sm-3 control-label">{{__('messages.collaborator.course.school')}}</label>
-						<div class="col-sm-9">{!!Form::text('institutionName',null,['class'
-							=> 'form-control ', 'id' => 'institutionName']) !!}</div>
+						<div class="col-sm-9">{!! Form::select('institutionName',
+							['IIM' => 'Instituto Industrial de Maputo', 'EIM' => 'Escola Industrial de Maputo
+							','Outros' => 'Outros'], null,
+							['class' => 'form-control required', 'id' =>
+							'institutionName']) !!}</div>
 					</div>
 					<div class="form-group required">
 						<label for="institutionCountry" class="col-sm-3 control-label">{{__('messages.collaborator.course.school.country')}}</label>
@@ -107,6 +104,13 @@
 							'Provincia','Provincia 3' => 'Provincia', 'Provincia 4' =>
 							'Provincia' ], null, ['class' => 'form-control required', 'id' =>
 							'institutionProvince']) !!}</div>
+					</div>
+
+					<div class="form-group required">
+						<label for="aditionalInformation" class="col-sm-3 control-label">
+							{{ __('messages.collaborator.aditional.information') }} </label>
+						<div class="col-sm-9">{{ Form::textarea('aditionalInformation',
+							null, ['size' => '35x1']) }}</div>
 					</div>
 
 
