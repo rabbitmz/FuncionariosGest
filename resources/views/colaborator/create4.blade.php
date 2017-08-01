@@ -8,41 +8,29 @@
 	</div>
 
 	<div class="panel-body">
-		{{Form::open(['url' => '/createColaborator/page5'])}}
-		<!-- 	cursos na area -->
+		{{Form::open(['url' => '/createColaborator/page4'])}}
+		<!-- 	Competencias na area -->
 		<div class="panel panel-default">
 			<div class="panel-heading sub-panel-color-heading">
 				<span class="panel-heading-text"> {{
-					__('messages.collaborator.course.title') }}</span>
+					__('messages.collaborator.skills') }}</span>
 			</div>
+
 			<div class="panel-body">
-				<table class="table" id="courseTable"
+				<!-- 				Fazer um for para criar checkbox baseados na lista de competencias possiveis -->
+				<table class="table" id="competenciaTable"
 					data-editing-always-show="true">
 					<thead>
 						<tr>
-							<th data-name="course">{{__('messages.collaborator.course.name')}}</th>
-							<th data-name="courseGraduationDate" data-breakpoints="xs sm"
-								data-type="date" data-format-string="MMMM Do YYYY">{{__('messages.collaborator.course.date.graduation')}}</th>
-							<th data-name="courseCategory">{{__('messages.collaborator.course.category')}}</th>
-							<th data-name="institutionName">{{__('messages.collaborator.course.school')}}</th>
-							<th data-name="institutionCountry">{{__('messages.collaborator.course.school.country')}}</th>
-							<th data-name="institutionProvince">{{__('messages.collaborator.course.school.province')}}</th>
+							<th data-name="comp">{{__('messages.collaborator.skill.label') }}</th>
+							<th data-name="desc">{{__('messages.collaborator.description.label')}}
+							</th>
 						</tr>
 					</thead>
 					<tbody>
 
 					</tbody>
 				</table>
-			</div>
-		</div>
-
-		<div class="panel panel-default">
-			<div class="panel-heading sub-panel-color-heading">
-				<span class="panel-heading-text"> {{
-					__('messages.collaborator.aditional.information') }}</span>
-			</div>
-			<div class="panel-body">
-				{{ Form::textarea('aditionalInformation', null, ['size' => '115x5']) }}
 			</div>
 		</div>
 
@@ -53,64 +41,34 @@
 		{{Form::close()}}
 	</div>
 	<!-- EDITOR MODAL -->
-	<div class="modal fade" id="course-modal" tabindex="-1" role="dialog"
-		aria-labelledby="course-title">
+	<div class="modal fade" id="competencia-modal" tabindex="-1"
+		role="dialog" aria-labelledby="competencia-title">
 		<div class="modal-dialog" role="document">
-			<form class="modal-content form-horizontal" id="course">
+			<form class="modal-content form-horizontal" id="competencia">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">×</span>
 					</button>
-					<h4 class="modal-title" id="course-title">{{__('messages.collaborator.course.modal.title')}}</h4>
+					<h4 class="modal-title" id="competencia-title">{{__('messages.collaborator.skills.modal.title')
+						}}</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group required">
-						<label for="course" class="col-sm-3 control-label">{{__('messages.collaborator.course.name')}}</label>
-						<div class="col-sm-9">{!!Form::text('course',null,['class' =>
-							'form-control ', 'id' => 'course']) !!}</div>
+						<label for="comp" class="col-sm-3 control-label">{{__('messages.collaborator.work.area')
+							}}</label>
+						<div class="col-sm-9">{!! Form::select('comp', ['comp1' =>
+							'Competencia 1', 'comp2' => 'Competencia 2','comp3' =>
+							'Competencia 3', 'comp4' => 'Competencia 4' ], null, ['class' =>
+							'form-control required', 'id' => 'comp']) !!}</div>
 					</div>
 					<div class="form-group required">
-						<label for="courseGraduationDate" class="col-sm-3 control-label">
-							{{__('messages.collaborator.course.date.graduation')}} </label>
-						<div class="col-sm-9">
-							<input type="date" class="form-control" id="courseGraduationDate"
-								name="startedOn" placeholder="dd/mm/AAAA" required>
-						</div>
-					</div>
+						<label for="desc" class="col-sm-3 control-label">{{__('messages.collaborator.work.area')
+							}}</label>
 
-					<div class="form-group required">
-						<label for="courseCategory" class="col-sm-3 control-label">{{__('messages.collaborator.course.category')}}</label>
-						<div class="col-sm-9">{!! Form::select('courseCategory',
-							['Categoria1' => 'Categoria 1', 'Categoria 2' => 'Categoria
-							2','Categoria3' => 'Categoria 3', 'Categoria4' => 'Categoria 4'
-							], null, ['class' => 'form-control required', 'id' =>
-							'courseCategory']) !!}</div>
+						<div class="col-sm-9">{!!Form::text('desc',null,['class' =>
+							'form-control ', 'id' => 'desc']) !!}</div>
 					</div>
-					<div class="form-group required">
-						<label for="institutionName" class="col-sm-3 control-label">{{__('messages.collaborator.course.school')}}</label>
-						<div class="col-sm-9">{!!Form::text('institutionName',null,['class'
-							=> 'form-control ', 'id' => 'institutionName']) !!}</div>
-					</div>
-					<div class="form-group required">
-						<label for="institutionCountry" class="col-sm-3 control-label">{{__('messages.collaborator.course.school.country')}}</label>
-						<div class="col-sm-9">{!! Form::select('institutionCountry',
-							['Mocambique' => 'Mocambique', 'Africa do Sul' => 'Africa do
-							Sul','Namibia' => 'Namibia', 'Zimbabwe' => 'Zimbabwe' ], null,
-							['class' => 'form-control required', 'id' =>
-							'institutionCountry']) !!}</div>
-					</div>
-					<div class="form-group required">
-						<label for="institutionProvince" class="col-sm-3 control-label">{{__('messages.collaborator.course.school.province')}}</label>
-						<div class="col-sm-9">{!! Form::select('institutionProvince',
-							['Provincia 1' => 'Provincia', 'Provincia 2' =>
-							'Provincia','Provincia 3' => 'Provincia', 'Provincia 4' =>
-							'Provincia' ], null, ['class' => 'form-control required', 'id' =>
-							'institutionProvince']) !!}</div>
-					</div>
-
-
-
 
 				</div>
 				<div class="modal-footer">
@@ -126,5 +84,5 @@
 </div>
 
 @endsection @section('scripts')
-<script src="{{ asset('js/colaborator4.js') }}"></script>
+<script src="{{ asset('js/colaborator3.js') }}"></script>
 @endsection

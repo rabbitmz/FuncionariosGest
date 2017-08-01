@@ -8,139 +8,123 @@
 	</div>
 
 	<div class="panel-body">
-		{{Form::open(['url' => '/createColaborator/page2'])}}
+		{{Form::open(['url' => '/createColaborator/page5'])}}
+		<!-- 	cursos na area -->
 		<div class="panel panel-default">
 			<div class="panel-heading sub-panel-color-heading">
 				<span class="panel-heading-text"> {{
-					__('messages.collaborator.pageOne.subtitle1') }}</span>
+					__('messages.collaborator.course.title') }}</span>
 			</div>
-
 			<div class="panel-body">
-				<div class="form-group">
-					<div class="row">
-						<div class="col-lg-2">{!!
-							Form::label('lprofession1',trans('messages.collaborator.profession').'
-							1 :', ['for' => 'profession1' ]) !!}</div>
-						<div class="col-lg-6">{!! Form::select('profession1', ['pedreiro'
-							=> 'Pedreiro', 'canalizador' => 'Canalizador'], null, ['class' =>
-							'form-control ', 'id' => 'profession1']) !!}</div>
-						<div class="col-lg-2	">{!!
-							Form::label('lyearsOfExperience',trans('messages.collaborator.yearsOfExperience').'
-							:', ['for' => 'yearsOfExperience' ]) !!}</div>
-						<div class="col-lg-2">{!!
-							Form::text('yearsOfExperience',null,['class' => 'form-control ',
-							'id' => 'yearsOfExperience']) !!}</div>
-					</div>
-				</div>
-
-
-				<div class="form-group">
-					<div class="row">
-						<div class="col-lg-2">{!!
-							Form::label('lprofession2',trans('messages.collaborator.profession').'
-							2 :', ['for' => 'profession2' ]) !!}</div>
-						<div class="col-lg-6">{!! Form::select('profession1', ['pedreiro'
-							=> 'Pedreiro', 'canalizador' => 'Canalizador'], null, ['class' =>
-							'form-control ', 'id' => 'profession2']) !!}</div>
-						<div class="col-lg-2	">{!!
-							Form::label('lyearsOfExperience',trans('messages.collaborator.yearsOfExperience').'
-							:', ['for' => 'yearsOfExperience' ]) !!}</div>
-						<div class="col-lg-2">{!!
-							Form::text('yearsOfExperience',null,['class' => 'form-control ',
-							'id' => 'yearsOfExperience']) !!}</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<!-- 	INFORMAL -->
-		<div class="panel panel-default">
-			<div class="panel-heading sub-panel-color-heading">
-				<span class="panel-heading-text"> {{
-					__('messages.collaborator.pageOne.subtitle2') }}</span>
-			</div>
-
-			<div class="panel-body">
-				<table class="table" id="unofficialWork"
+				<table class="table" id="courseTable"
 					data-editing-always-show="true">
 					<thead>
 						<tr>
-							<th data-name="workArea">{{__('messages.collaborator.work.area')
-								}}</th>
-							<th data-name="startedOn" data-breakpoints="xs sm"
-								data-type="date" data-format-string="MMMM Do YYYY">{{__('messages.collaborator.work.unofficial.date.initial')}}</th>
-							<th data-name="finishOn" data-breakpoints="xs sm"
-								data-type="date" data-format-string="MMMM Do YYYY">{{__('messages.collaborator.work.unofficial.date.final')}}
-							</th>
-							<th data-name="dob" data-breakpoints="xs sm" data-type="date"
-								data-format-string="MMMM Do YYYY">{{__('messages.collaborator.work.unofficial.date.duration')}}
-							</th>
+							<th data-name="course">{{__('messages.collaborator.course.name')}}</th>
+							<th data-name="courseGraduationDate" data-breakpoints="xs sm"
+								data-type="date" data-format-string="MMMM Do YYYY">{{__('messages.collaborator.course.date.graduation')}}</th>
+							<th data-name="courseCategory">{{__('messages.collaborator.course.category')}}</th>
+							<th data-name="institutionName">{{__('messages.collaborator.course.school')}}</th>
+							<th data-name="institutionCountry">{{__('messages.collaborator.course.school.country')}}</th>
+							<th data-name="institutionProvince">{{__('messages.collaborator.course.school.province')}}</th>
 						</tr>
 					</thead>
 					<tbody>
 
 					</tbody>
 				</table>
-
 			</div>
 		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading sub-panel-color-heading">
+				<span class="panel-heading-text"> {{
+					__('messages.collaborator.aditional.information') }}</span>
+			</div>
+			<div class="panel-body">
+				{{ Form::textarea('aditionalInformation', null, ['size' => '115x5']) }}
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-lg-12 ">{!!Form::submit('Seguinte',['class' => 'btn
 				pull-right']); !!}</div>
 		</div>
 		{{Form::close()}}
 	</div>
-</div>
+	<!-- EDITOR MODAL -->
+	<div class="modal fade" id="course-modal" tabindex="-1" role="dialog"
+		aria-labelledby="course-title">
+		<div class="modal-dialog" role="document">
+			<form class="modal-content form-horizontal" id="course">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+					<h4 class="modal-title" id="course-title">{{__('messages.collaborator.course.modal.title')}}</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group required">
+						<label for="course" class="col-sm-3 control-label">{{__('messages.collaborator.course.name')}}</label>
+						<div class="col-sm-9">{!!Form::text('course',null,['class' =>
+							'form-control ', 'id' => 'course']) !!}</div>
+					</div>
+					<div class="form-group required">
+						<label for="courseGraduationDate" class="col-sm-3 control-label">
+							{{__('messages.collaborator.course.date.graduation')}} </label>
+						<div class="col-sm-9">
+							<input type="date" class="form-control" id="courseGraduationDate"
+								name="startedOn" placeholder="dd/mm/AAAA" required>
+						</div>
+					</div>
+
+					<div class="form-group required">
+						<label for="courseCategory" class="col-sm-3 control-label">{{__('messages.collaborator.course.category')}}</label>
+						<div class="col-sm-9">{!! Form::select('courseCategory',
+							['Categoria1' => 'Categoria 1', 'Categoria 2' => 'Categoria
+							2','Categoria3' => 'Categoria 3', 'Categoria4' => 'Categoria 4'
+							], null, ['class' => 'form-control required', 'id' =>
+							'courseCategory']) !!}</div>
+					</div>
+					<div class="form-group required">
+						<label for="institutionName" class="col-sm-3 control-label">{{__('messages.collaborator.course.school')}}</label>
+						<div class="col-sm-9">{!!Form::text('institutionName',null,['class'
+							=> 'form-control ', 'id' => 'institutionName']) !!}</div>
+					</div>
+					<div class="form-group required">
+						<label for="institutionCountry" class="col-sm-3 control-label">{{__('messages.collaborator.course.school.country')}}</label>
+						<div class="col-sm-9">{!! Form::select('institutionCountry',
+							['Mocambique' => 'Mocambique', 'Africa do Sul' => 'Africa do
+							Sul','Namibia' => 'Namibia', 'Zimbabwe' => 'Zimbabwe' ], null,
+							['class' => 'form-control required', 'id' =>
+							'institutionCountry']) !!}</div>
+					</div>
+					<div class="form-group required">
+						<label for="institutionProvince" class="col-sm-3 control-label">{{__('messages.collaborator.course.school.province')}}</label>
+						<div class="col-sm-9">{!! Form::select('institutionProvince',
+							['Provincia 1' => 'Provincia', 'Provincia 2' =>
+							'Provincia','Provincia 3' => 'Provincia', 'Provincia 4' =>
+							'Provincia' ], null, ['class' => 'form-control required', 'id' =>
+							'institutionProvince']) !!}</div>
+					</div>
 
 
-<!-- EDITOR MODAL -->
-<div class="modal fade" id="editor-modal" tabindex="-1" role="dialog"
-	aria-labelledby="editor-title">
-	<div class="modal-dialog" role="document">
-		<form class="modal-content form-horizontal" id="editor">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
-					<span aria-hidden="true">×</span>
-				</button>
-				<h4 class="modal-title" id="editor-title">{{__('messages.collaborator.work.unofficial.add.title')
-					}}</h4>
-			</div>
-			<div class="modal-body">
-				<div class="form-group required">
-					<label for="workArea" class="col-sm-3 control-label">{{__('messages.collaborator.work.area')
-						}}</label>
-					<div class="col-sm-9">{!! Form::select('workArea', ['autoMecanico'
-						=> 'Auto Mecanico', 'Soldadura' => 'Soldadura'], null, ['class' =>
-						'form-control required', 'id' => 'workArea']) !!}</div>
+
+
 				</div>
-				<div class="form-group required">
-					<label for="startedOn" class="col-sm-3 control-label">{{__('messages.collaborator.work.unofficial.date.initial')
-						}} </label>
-					<div class="col-sm-9">
-						<input type="date" class="form-control" id="startedOn"
-							name="startedOn" placeholder="Started On" required>
-					</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">{{__('messages.save')
+						}}</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">{{__('messages.cancel')
+						}}</button>
 				</div>
-				<div class="form-group">
-					<label for="finishOn" class="col-sm-3 control-label">{{__('messages.collaborator.work.unofficial.date.final')
-						}} </label>
-					<div class="col-sm-9">
-						<input type="date" class="form-control" id="finishOn"
-							name="finishOn" placeholder="Date of Birth">
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="submit" class="btn btn-primary">{{__('messages.save')
-					}}</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">{{__('messages.cancel')
-					}}</button>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
-</div>
-@endsection @section('scripts')
-<script src="{{ asset('js/colaborator.js') }}"></script>
-@endsection
 
+</div>
+
+@endsection @section('scripts')
+<script src="{{ asset('js/colaborator4.js') }}"></script>
+@endsection
