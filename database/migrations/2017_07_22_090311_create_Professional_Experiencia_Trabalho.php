@@ -17,8 +17,8 @@ class CreateProfessionalExperienciaTrabalho extends Migration
             $table->increments('id');
             $table->integer('professional_id')->unsigned();
             $table->integer('experiencia_id')->unsigned();
-            $table->timestamp('data_inicio');
-            $table->timestamp('data_fim');
+            $table->timestamp('data_inicio')->nullable();
+            $table->timestamp('data_fim')->nullable();
             $table->timestamps();
         });
         

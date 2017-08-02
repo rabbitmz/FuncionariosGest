@@ -18,8 +18,8 @@ class CreateProfessionalProfissao extends Migration
             $table->integer('professional_id')->unsigned();
             $table->integer('profissao_id')->unsigned();
             $table->integer('nivel_professional_id')->unsigned();
-            $table->timestamp('data_inicio');
-            $table->timestamp('data_fim');
+            $table->timestamp('data_inicio')->nullable();
+            $table->timestamp('data_fim')->nullable();
             $table->boolean('primaria');
             $table->timestamps();
         });

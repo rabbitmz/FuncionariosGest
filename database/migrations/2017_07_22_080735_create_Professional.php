@@ -17,11 +17,11 @@ class CreateProfessional extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('genero')->length(1);
-            $table->timestamp('data_nascimento');
+            $table->timestamp('data_nascimento')->nullable();
             $table->integer('tipo_documento_id')->unsigned();
             $table->string('numero_documento');
-            $table->timestamp('data_emissao_documento');
-            $table->timestamp('data_validade_documento');
+            $table->timestamp('data_emissao_documento')->nullable();
+            $table->timestamp('data_validade_documento')->nullable();
             $table->integer('nacionalidade_id')->unsigned();
             $table->integer('naturalidade_provincia_id')->unsigned();
             $table->integer('endereco_provincia_id')->unsigned();
@@ -39,7 +39,7 @@ class CreateProfessional extends Migration
         });
         
         Schema::table('professional', function(Blueprint $table) {
-            $table->foreign('tipo_documento_id')->references('id')->on('tipo_docoumento');
+            $table->foreign('tipo_documento_id')->references('id')->on('tipo_documento');
         });
         
         Schema::table('professional', function(Blueprint $table) {
