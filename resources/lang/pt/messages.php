@@ -111,4 +111,18 @@ return [
 		//vizualizacao
 		'collaborator.view.title' => 'Visualiza&ccedil;&atilde;o de Profissional',
 		
+		//Generate report 
+		'report.view.title' => 'Gerar Relat&otilde;rio',
+		'report.view.Subtitle.page1' => 'Filtros de pesquisa',
+		'report.view.Subtitle.personal.data' => 'Dados Pessoais',
+		'report.view.Subtitle.personal.address.data' => 'Dados do endereço',
+		'report.view.Subtitle.personal.school.data' => 'Dados do Nivel de Escolaridade',
+		'report.view.Subtitle.personal.experiencie.data' => 'Dados da Experiencia Profissal Comprovada',
+		'report.view.Subtitle.personal.Unofficial.experiencie.data' => 'Dados da Experiencia Profissal Informal',
+		'report.view.Subtitle.personal.laboral.data' => 'Dados da Situação laboral',
+		'report.view.age.min' => 'Idade Minima',
+		'report.view.age.max' => 'Idade Maxima',
+		'report.view.unofficial.experience' => 'Experi&ecirc;ncia Informal',		
+		
+		
 ];

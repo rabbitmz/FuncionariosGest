@@ -37,7 +37,7 @@
 							<li><a href="/listAll">{{ __('messages.search') }}</a></li>
 						</ul>
 						</li>
-					<li><a href="#">{{ __('messages.report') }}</a></li>
+					<li><a href="/report">{{ __('messages.report') }}</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

@@ -109,6 +109,23 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
+							Form::label('laddressProv',trans('messages.collaborator.locality').'
+							:', ['for' => 'addressProv' ]) !!}</div>
+						<div class="col-lg-4">{!! Form::select('addressProv', ['Maputo' =>
+							'Maputo', 'Beira' => 'Beira'], null, ['class' => 'form-control ',
+							'id' => 'addressProv']) !!}</div>
+						<div class="col-lg-2">{!!
+							Form::label('laddressCity',trans('messages.collaborator.city').'
+							:', ['for' => 'addressProv' ]) !!}</div>
+						<div class="col-lg-4">{!! Form::select('addressCity', ['Maputo' =>
+							'Maputo', 'Beira' => 'Beira'], null, ['class' => 'form-control ',
+							'id' => 'addressCity']) !!}</div>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-2">{!!
 							Form::label('llocality',trans('messages.collaborator.locality').'
 							:', ['for' => 'nationality' ]) !!}</div>
 						<div class="col-lg-4">{!! Form::select('llocality', ['Magude' =>
@@ -196,7 +213,7 @@
 									<div class="col-lg-2">{!!
 										Form::label('lschooLevel',trans('messages.collaborator.school.level').'
 										:', ['for' => 'schooLevel' ]) !!}</div>
-									<div class="col-lg-2">{!! Form::select('schooLevel', ['1' => '1
+									<div class="col-lg-3">{!! Form::select('schooLevel', ['1' => '1
 										Classe', '2' => '2 Classe','3' => '3 Classe','4' => '4
 										Classe','5' => '5 Classe','6' => '6 Classe','7' => '7
 										Classe','8' => '8 Classe','9' => '9 Classe','10' => '10
