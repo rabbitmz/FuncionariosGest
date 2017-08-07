@@ -16,6 +16,7 @@ class CreateAreaEmpresa extends Migration
         Schema::create('area_empresa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descricao')->length(50)->index()->unique();
+            $table->string('numeracao')->length(50)->unique();
             $table->timestamps();
         });
     }
