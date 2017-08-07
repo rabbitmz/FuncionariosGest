@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
     	$this->call(CursoTableSeeder::class);
     	$this->call(TipoDocumentoTableSeeder::class);
     	$this->call(TipoContratoTableSeeder::class);
+    	$this->call(ProfessionalTableSeeder::class);
     	
     }
 }
