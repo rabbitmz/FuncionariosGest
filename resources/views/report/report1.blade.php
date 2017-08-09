@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="panel-body">
-		{{Form::open(['url' => '/editColaborator/page2'])}}
+		{{Form::open(['url' => '/search'])}}
 		<div class="panel panel-default">
 			<div class="panel-heading sub-panel-color-heading">
 				<span class="panel-heading-text"> {{
@@ -41,14 +41,14 @@
 									:', ['for' => 'ageMin' ]) !!}</div>
 
 								<div class="col-lg-3">{!! Form::select('ageMin', (['0' =>
-									'Selecione a idade minima'] + $listOfAges), null, ['class' =>
+									'Selecione a idade minima'] + $ages), null, ['class' =>
 									'form-control ', 'id' => 'ageMin']) !!}</div>
 
 								<div class="col-lg-2">{!!
 									Form::label('lageMax',trans('messages.report.view.age.max').'
 									:', ['for' => 'ageMax' ]) !!}</div>
 								<div class="col-lg-3">{!! Form::select('ageMax', (['0' =>
-									'Selecione a idade maxima'] + $listOfAges), null, ['class' =>
+									'Selecione a idade maxima'] + $ages), null, ['class' =>
 									'form-control ', 'id' => 'ageMin']) !!}</div>
 
 							</div>
@@ -67,10 +67,8 @@
 								<div class="col-lg-2">{!!
 									Form::label('laddressProv',trans('messages.collaborator.course.school.province').'
 									:', ['for' => 'addressProv' ]) !!}</div>
-								<div class="col-lg-3">{!! Form::select('addressProv', ['NONE' =>
-									'Selecione a provincia','Maputo' => 'Maputo', 'Beira' =>
-									'Beira'], null, ['class' => 'form-control ', 'id' =>
-									'addressProv']) !!}</div>
+								<div class="col-lg-3">{!! Form::select('addressProv', $provincias, null, ['class' => 'form-control ', 'id' =>
+									'addressProv','placeholder' => 'Selecione uma provincia']) !!}</div>
 
 							</div>
 						</div>

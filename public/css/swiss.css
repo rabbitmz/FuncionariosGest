@@ -32,3 +32,8 @@
 {
 	display: none;
 }
+
+.boldText
+{
+	font-weight: bold;
+}

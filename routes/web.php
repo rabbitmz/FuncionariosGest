@@ -48,4 +48,5 @@ Route::post("/editColaborator/page9", ['uses' => 'ColaboratorController@onEditPa
 
 //Generate Report
 Route::get("/report", ['uses' => 'ReportController@index']);
+Route::post('/search',['uses' => 'ReportController@filter']);
 

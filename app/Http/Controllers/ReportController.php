@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Professional;
+use App\ProfessionalSearch;
+use App\Provincia;
 
 class ReportController extends Controller {
 	/**
@@ -21,7 +24,18 @@ class ReportController extends Controller {
 		for($i = 0; $i <= 45; $i ++) {
 			$experiencesYears [$i] = $i;
 		}
+		
+		$provincias = Provincia::pluck('nome','id');
 		// Show page with filters
-		return view ( "report.report1" )->with ( 'listOfAges', $ages )->with ( 'experiencesYears', $experiencesYears );
+		return view ( "report.report1", compact('ages','experiencesYears','provincias'));
+		
+	}
+	
+	
+	public function filter(Request $request)
+	{
+		$resultSet = ProfessionalSearch::apply($request);
+		
+		return view("report.report2")->with('resultSet',$resultSet);
 	}
 }

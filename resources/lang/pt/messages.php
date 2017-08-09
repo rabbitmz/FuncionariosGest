@@ -51,6 +51,7 @@ return [
 		'collaborator.neighborhood' => 'Bairro',
 		'collaborator.cell' => 'Celula',
 		'collaborator.identificationDocument' => 'Numero de documento de Identifa&ccedil;&atilde;o',
+		'collaborator.identificationDocument.short' => 'N&deg; de documento de Identifa&ccedil;&atilde;o',
 		'collaborator.identificationDocument.extended' => 'Documento de Identifa&ccedil;&atilde;o',
 		'collaborator.identificationDocument.type' => 'Tipo de Documento de Identifa&ccedil;&atilde;o',
 		'collaborator.identificationDocument.type.bi' => 'BI',
@@ -123,6 +124,16 @@ return [
 		'report.view.age.min' => 'Idade Minima',
 		'report.view.age.max' => 'Idade Maxima',
 		'report.view.unofficial.experience' => 'Experi&ecirc;ncia Informal',		
+		
+		'report.view.Subtitle.page2' => 'Resultados da pesquisa',
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 ];
