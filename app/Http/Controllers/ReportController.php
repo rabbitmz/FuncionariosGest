@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Professional;
 use App\ProfessionalSearch;
 use App\Provincia;
+use PDF;
 
 class ReportController extends Controller {
 	/**
@@ -34,8 +34,15 @@ class ReportController extends Controller {
 	
 	public function filter(Request $request)
 	{
-		$resultSet = ProfessionalSearch::apply($request);
-		
+		$resultSet = ProfessionalSearch::apply($request);		
+		session(['resultSet' => $resultSet]);
 		return view("report.report2")->with('resultSet',$resultSet);
+	}
+	
+	public function downloadPdf()
+	{
+		$resultSet= session('resultSet');
+		$pdf = PDF::loadView('report.pdfReport', compact('resultSet'));
+		return $pdf->download('pdfReport.pdf');
 	}
 }

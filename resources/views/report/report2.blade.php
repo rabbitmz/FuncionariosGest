@@ -5,6 +5,8 @@
 	<div class="panel-heading panel-red-heading">
 		<span class="panel-heading-text"> {{ __('messages.report.view.title')
 			}}</span>
+
+
 	</div>
 
 	<div class="panel-body">
@@ -12,7 +14,11 @@
 		<div class="panel panel-default">
 			<div class="panel-heading sub-panel-color-heading">
 				<span class="panel-heading-text"> {{
-					__('messages.report.view.Subtitle.page1') }}</span>
+					__('messages.report.view.Subtitle.page1') }}</span> 
+					
+					
+					
+			<a href="{{ route('downloadPdf',['download'=>'pdf']) }}">Download PDF</a>
 			</div>
 
 			<div class="panel-body">
@@ -29,7 +35,7 @@
 
 							<thead>
 								<tr>
-									
+
 									<th data-name="gender">{{__('messages.collaborator.gender')}}</th>
 									<th data-name="dateOfBirth" data-type="date"
 										data-format-string="MMMM Do YYYY">{{__('messages.collaborator.birthDate')}}</th>
@@ -45,7 +51,7 @@
 
 
 								<tr>
-								
+
 									<td>{{ $professional->genero }}</td>
 									<td>{{ $professional->data_nascimento }}</td>
 									<td>{{ $professional->numero_documento }}</td>
@@ -62,13 +68,12 @@
 							@foreach ($professional->professions as $profession)
 							<div class="form-group required">
 								<label class="col-sm-3 control-label boldText">{{__('messages.collaborator.profession.primary')}}</label>
-								<label class="col-sm-3">{{ $profession->descricao }}</label>
-								 <label
+								<label class="col-sm-3">{{ $profession->descricao }}</label> <label
 									class="col-sm-3 control-label"><span class="boldText">{{__('messages.collaborator.yearsOfExperience')}}</span></label>
 								<label class="col-sm-3">{{ $profession->descricao }}</label>
 							</div>
-	
-						@endforeach
+
+							@endforeach
 
 						</div>
 					</div>

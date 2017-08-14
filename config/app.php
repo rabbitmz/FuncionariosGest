@@ -161,6 +161,7 @@ return [
 				Illuminate\Translation\TranslationServiceProvider::class,
 				Illuminate\Validation\ValidationServiceProvider::class,
 				Illuminate\View\ViewServiceProvider::class,
+			
 
         /*
          * Package Service Providers...
@@ -175,7 +176,8 @@ return [
 				// App\Providers\BroadcastServiceProvider::class,
 				App\Providers\EventServiceProvider::class,
 				App\Providers\RouteServiceProvider::class,
-				Collective\Html\HtmlServiceProvider::class 
+				Collective\Html\HtmlServiceProvider::class,
+				Barryvdh\DomPDF\ServiceProvider::class 
 		
 		],
 
@@ -226,7 +228,8 @@ return [
 				'Validator' => Illuminate\Support\Facades\Validator::class,
 				'View' => Illuminate\Support\Facades\View::class,
 				'Form' => Collective\Html\FormFacade::class,
-				'Html' => Collective\Html\HtmlFacade::class, 
+				'Html' => Collective\Html\HtmlFacade::class,
+				'PDF' => Barryvdh\DomPDF\Facade::class 
 		
 		] 
 
