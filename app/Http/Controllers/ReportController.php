@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ProfessionalSearch;
 use App\Provincia;
 use PDF;
+use Carbon\Carbon;
 
 class ReportController extends Controller {
 	/**
@@ -41,8 +42,9 @@ class ReportController extends Controller {
 	
 	public function downloadPdf()
 	{
+		$currentDate = Carbon::now()->format('d-m-Y');		
 		$resultSet= session('resultSet');
-		$pdf = PDF::loadView('report.pdfReport', compact('resultSet'));
+		$pdf = PDF::loadView('report.pdfReport', compact('resultSet','currentDate'));
 		return $pdf->download('pdfReport.pdf');
 	}
 }
