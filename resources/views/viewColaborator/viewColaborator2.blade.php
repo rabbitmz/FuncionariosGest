@@ -17,7 +17,8 @@
 			</div>
 
 			<div class="panel-body">
-				<table class="table" id="listAllTable" data-paging="true" >
+				<table class="table" id="listAllTable" data-paging="true"
+					data-paging-size="15">
 					<thead>
 						<tr>
 							<th data-name="name">{{__('messages.collaborator.name') }}</th>
@@ -26,31 +27,35 @@
 							
 							<th data-name="gender">{{__('messages.collaborator.gender')}}
 							
-							<th data-name="work1">{{__('messages.collaborator.profession')}}
+							<th data-name="work1">{{__('messages.collaborator.profession.primary')}}
 							
 							
-							<th data-name="work2">{{__('messages.collaborator.profession')}}
+							<th data-name="work2">{{__('messages.collaborator.profession.other')}}
 							
 							
 							<th data-name="provincia">{{__('messages.collaborator.citizenship')}}
 							
 							
 							<th data-name="city">{{__('messages.collaborator.city')}}
-							<th></th>
+						
+							<th data-name="id">visualizar</th>
 						</tr>
 					</thead>
 					<tbody>
-<!-- 					fazer um for com todos os colaboratos encontrados, criar um botao com a href contendo o id de cada um dos colaboratos -->
+						@foreach ($professionals as $professional)
 						<tr>
-						<td>Marcos Mateus</td>
-						<td>123456879123Z</td>
-						<td>Masculino</td>
-						<td>Pedreiro</td>
-						<td>Canalizador</td>
-						<td>Maputo Cidade</td>
-						<td>Maputo</td>
-						<td>{{link_to_route('showColaborator', $title = null, $parameters = [1], $attributes = [])}}</td>
+							<td>{{ $professional->nome }}</td>
+							<td>{{ $professional->numero_documento }}</td>
+							<td>{{ $professional->genero }}</td>
+							 @foreach ($professional->professions as $profession)
+							<td>{{ $profession->descricao }}</td>							
+							 @endforeach
+							<td>{{__('messages.collaborator.course.school.province')}}</td>
+							<td>{{__('messages.collaborator.locality')}}</td>
+							<td>{{link_to_route('showColaborator', $title = null, $parameters = [$professional->id], $attributes = [])}}</td>
 						</tr>
+						@endforeach
+
 					</tbody>
 				</table>
 			</div>
@@ -64,5 +69,6 @@
 $(function($){
 	$('#listAllTable').footable();
 });
+
 </script>
 @endsection

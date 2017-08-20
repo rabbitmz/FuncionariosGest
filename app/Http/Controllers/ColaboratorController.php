@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Professional;
+use App\ProfessionalSearch;
 
 class ColaboratorController extends Controller
 {
@@ -13,8 +15,8 @@ class ColaboratorController extends Controller
      */
     public function index()
     {
-        //Get all from BD 
-    	return view("listAll.listAll");
+    	$professionals = Professional::all();
+    	return view("listAll.listAll",compact('professionals'));
     }
 
     /**
@@ -47,8 +49,10 @@ class ColaboratorController extends Controller
      */
     public function show($id)
     {
+    	$professional = Professional::find($id);
+    	
         //get colaborator by id 
-    	return view("viewColaborator.viewColaborator3");
+    	return view("viewColaborator.viewColaborator3",compact('professional'));
     }
 
     /**
@@ -121,20 +125,44 @@ class ColaboratorController extends Controller
     	return view("viewColaborator.viewColaborator1");
     } 
     
-    public function getColaboratorByNameOrDocumentIdentification()
+    public function getColaboratorByNameOrDocumentIdentification(Request $request)
     {	
-    	//Get from BD
-    	return view("viewColaborator.viewColaborator2");
+    	$search = false;
+    	
+    	if($request->has("name"))
+    	{
+    		$this->validate($request, [
+    				'name' => 'bail|regex:/^[a-zA-Z]+$/u|max:255|min:3',
+    		]);
+    		$search = true;
+    	}
+    	
+    	if($request->has("docNumber"))
+    	{
+    		$this->validate($request, [
+    				'docNumber' => 'min:5',
+    		]);
+    		$search = true;
+    	}
+    	if($search)
+    	{
+    		$professionals= ProfessionalSearch::apply($request);		
+    	}
+    	else 
+    	{
+    		return view("viewColaborator.viewColaborator1");
+    	}
+    	return view("viewColaborator.viewColaborator2",compact('professionals'));
     }
 	
-//     edit
+	//edit
     public function getEditColaboratorSearchView()
     {
     	return view("editColaborator.editColaborator1");
     } 
-    public function getColaboratorByNameOrDocumentIdentificationEdit()
+    public function getColaboratorByNameOrDocumentIdentificationEdit(Request $request)
     {
-    	//Get from BD
+    		
     	return view("editColaborator.editColaborator2");
     }
     public function onEditPageFour(Request $request)
@@ -163,5 +191,5 @@ class ColaboratorController extends Controller
     	return view("editColaborator.editColaborator9");
     }
     
-  
+
 }

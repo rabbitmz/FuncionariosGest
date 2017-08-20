@@ -2,6 +2,15 @@
 
 @section('content')
 <div class="panel panel-default mukheroHack ">
+	@if ($errors->any())
+	<div class="alert alert-danger">
+		<ul>
+			@foreach ($errors->all() as $error)
+			<li>{{ $error }}</li> @endforeach
+		</ul>
+	</div>
+	@endif
+
 	<div class="panel-heading panel-red-heading">
 		<span class="panel-heading-text"> {{
 			__('messages.collaborator.search.title') }}</span>
@@ -37,10 +46,11 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('ldoc',trans('messages.collaborator.identificationDocument.extended').' '.trans('messages.collaborator.identificationDocument').' :',
-							['for' => 'doc' ]) !!}</div>
-						<div class="col-lg-6">{!! Form::text('doc',null,['class' =>
-							'form-control ', 'id' => 'doc']) !!}</div>
+							Form::label('ldoc',trans('messages.collaborator.identificationDocument.extended').'
+							'.trans('messages.collaborator.identificationDocument').' :',
+							['for' => 'docNumber' ]) !!}</div>
+						<div class="col-lg-6">{!! Form::text('docNumber',null,['class' =>
+							'form-control ', 'id' => 'docNumber']) !!}</div>
 					</div>
 				</div>
 			</div>
@@ -53,4 +63,4 @@
 		{{Form::close()}}
 	</div>
 </div>
-@endsection 
+@endsection
