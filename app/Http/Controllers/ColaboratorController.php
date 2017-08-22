@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Professional;
 use App\ProfessionalSearch;
+use App\Provincia;
+
 
 class ColaboratorController extends Controller
 {
@@ -49,10 +51,12 @@ class ColaboratorController extends Controller
      */
     public function show($id)
     {
+    	$provincias = Provincia::pluck('nome','id');
     	$professional = Professional::find($id);
+    	$identificationDocType = $professional->identificationDocumentType;
     	
         //get colaborator by id 
-    	return view("viewColaborator.viewColaborator3",compact('professional'));
+    	return view("viewColaborator.viewColaborator3",compact('provincias','professional','identificationDocType'));
     }
 
     /**

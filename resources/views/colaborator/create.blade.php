@@ -126,12 +126,6 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('llocality',trans('messages.collaborator.locality').'
-							:', ['for' => 'nationality' ]) !!}</div>
-						<div class="col-lg-4">{!! Form::select('llocality', ['Magude' =>
-							'Magude', 'Bunga' => 'Bunga'], null, ['class' => 'form-control ',
-							'id' => 'llocality']) !!}</div>
-						<div class="col-lg-2">{!!
 							Form::label('lneighborhood',trans('messages.collaborator.neighborhood').'
 							:', ['for' => 'neighborhood' ]) !!}</div>
 						<div class="col-lg-4">{!! Form::text('neighborhood',null,['class'

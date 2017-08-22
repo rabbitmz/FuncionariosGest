@@ -13,6 +13,12 @@ class Professional extends Model
 	{
 		return $this->belongsToMany('App\Profissao','professional_profissao');
 	}
-	
-
+	public function identificationDocumentType()
+	{
+		return $this->belongsTo('App\Tipo_documento','tipo_documento_id');
+	}
+	public function naturality()
+	{
+		return $this->belongsTo('App\Provincia','naturalidade_provincia_id');
+	}
 }

@@ -46,8 +46,7 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('ldoc',trans('messages.collaborator.identificationDocument.extended').'
-							'.trans('messages.collaborator.identificationDocument').' :',
+							Form::label('ldoc',trans('messages.collaborator.identificationDocument').' :',
 							['for' => 'docNumber' ]) !!}</div>
 						<div class="col-lg-6">{!! Form::text('docNumber',null,['class' =>
 							'form-control ', 'id' => 'docNumber']) !!}</div>

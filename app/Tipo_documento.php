@@ -8,4 +8,6 @@ class Tipo_documento extends Model
 {
     //
     protected $table = 'tipo_documento';
+    
+  
 }
