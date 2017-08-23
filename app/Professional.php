@@ -11,7 +11,7 @@ class Professional extends Model
 	
 	public function professions()
 	{
-		return $this->belongsToMany('App\Profissao','professional_profissao');
+		return $this->belongsToMany(Professional_Profissao::class);
 	}
 	
         public function TipoDocumento()
@@ -42,6 +42,11 @@ class Professional extends Model
         public function Cidade()
         {
             return $this->belongsTo(Cidade::class);
+        }
+        
+        public function Classe()
+        {
+            return $this->belongsTo(Classe::class);
         }
 
 }

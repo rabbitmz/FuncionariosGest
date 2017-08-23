@@ -42,6 +42,7 @@ return [
 		'collaborator.gender' => 'Genero',
 		'collaborator.locality' => 'Localidade',
 		'collaborator.nationality' => 'Nacionalidade',
+                'collaborator.district' => 'Distrito',
 		'collaborator.citizenship' => 'Naturalidade',
 		'collaborator.birthDate' => 'Data de Nascimento',
 		'collaborator.city' => 'Cidade',
