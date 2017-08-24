@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Professional;
 use App\ProfessionalSearch;
+use App\Provincia;
+use App\Distrito;
 
 class ColaboratorController extends Controller
 {
@@ -26,7 +28,7 @@ class ColaboratorController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -92,7 +94,13 @@ class ColaboratorController extends Controller
   
     public function colaboratorForm()
     {
-    	return view("colaborator.create");
+        
+        return view('colaborator.create', [
+            'naturalidade_provincias' => Provincia::pluck('nome','id'),
+            'naturalidade_distritos' => Distrito::pluck('nome','id'),
+            'endereco_provincias' => Provincia::pluck('nome','id'),
+            'endereco_distritos' => Distrito::pluck('nome','id'),
+        ]);
     }
     public function onPageOne(Request $request)
     {

@@ -85,15 +85,13 @@
 						<div class="col-lg-2">{!!
 							Form::label('lnationality',trans('messages.collaborator.citizenship').'
 							:', ['for' => 'nationality' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('nationality',
-							['Mocambique' => 'Maputo', 'AfricaDoSul' => 'Beira'], null,
-							['class' => 'form-control ', 'id' => 'nationality']) !!}</div>
+						<div class="col-lg-2">{!! Form::select('naturalidade_provincia',$naturalidade_provincias, null, 
+                                                    ['class' => 'form-control ', 'id' => 'naturalidade_provincia']) !!}</div>
 						<div class="col-lg-2">{!!
-							Form::label('lCity',trans('messages.collaborator.city').' :',
+							Form::label('ldistrict',trans('messages.collaborator.district').' :',
 							['for' => 'city' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('city', ['Mocambique' =>
-							'Maputo', 'AfricaDoSul' => 'Beira'], null, ['class' =>
-							'form-control ', 'id' => 'city']) !!}</div>
+						<div class="col-lg-2">{!! Form::select('naturalidade_distrito',$naturalidade_distritos, null, 
+                                                    ['class' => 'form-control ', 'id' => 'naturalidade_distrito']) !!}</div>
 					</div>
 				</div>
 
@@ -109,11 +107,10 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('laddressProv',trans('messages.collaborator.locality').'
+							Form::label('laddressProv',trans('messages.collaborator.course.school.province').'
 							:', ['for' => 'addressProv' ]) !!}</div>
-						<div class="col-lg-4">{!! Form::select('addressProv', ['Maputo' =>
-							'Maputo', 'Beira' => 'Beira'], null, ['class' => 'form-control ',
-							'id' => 'addressProv']) !!}</div>
+						<div class="col-lg-4">{!! Form::select('endereco_provincia',$endereco_provincias, null, 
+                                                    ['class' => 'form-control ', 'id' => 'endereco_provincia']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('laddressCity',trans('messages.collaborator.city').'
 							:', ['for' => 'addressProv' ]) !!}</div>
@@ -126,11 +123,10 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('llocality',trans('messages.collaborator.locality').'
+							Form::label('llocality',trans('messages.collaborator.district').'
 							:', ['for' => 'nationality' ]) !!}</div>
-						<div class="col-lg-4">{!! Form::select('llocality', ['Magude' =>
-							'Magude', 'Bunga' => 'Bunga'], null, ['class' => 'form-control ',
-							'id' => 'llocality']) !!}</div>
+						<div class="col-lg-4">{!! Form::select('endereco_distrito',$endereco_distritos, null, 
+                                                    ['class' => 'form-control ', 'id' => 'endereco_distrito']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('lneighborhood',trans('messages.collaborator.neighborhood').'
 							:', ['for' => 'neighborhood' ]) !!}</div>
