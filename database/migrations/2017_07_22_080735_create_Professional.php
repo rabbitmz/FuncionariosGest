@@ -22,8 +22,8 @@ class CreateProfessional extends Migration
             $table->string('numero_documento');
             $table->timestamp('data_emissao_documento')->nullable();
             $table->timestamp('data_validade_documento')->nullable();
+            $table->integer('nacionalidade_id')->unsigned();
             $table->integer('naturalidade_provincia_id')->unsigned();
-            $table->integer('naturalidade_distrito_id')->unsigned();
             $table->integer('endereco_provincia_id')->unsigned();
             $table->integer('distrito_id')->unsigned();
             $table->integer('cidade_id')->unsigned();
@@ -33,8 +33,6 @@ class CreateProfessional extends Migration
             $table->string('celula');
             $table->string('casa');
             $table->boolean('tem_nivel_academico');
-            $table->string('nivel_academico');
-            $table->integer('classe_id')->unsigned();
             $table->integer('telefone');
             $table->string('email');
             $table->timestamps();
@@ -45,11 +43,11 @@ class CreateProfessional extends Migration
         });
         
         Schema::table('professional', function(Blueprint $table) {
-            $table->foreign('naturalidade_provincia_id')->references('id')->on('provincia');
+            $table->foreign('nacionalidade_id')->references('id')->on('nacionalidade');
         });
         
         Schema::table('professional', function(Blueprint $table) {
-            $table->foreign('naturalidade_distrito_id')->references('id')->on('distrito');
+            $table->foreign('naturalidade_provincia_id')->references('id')->on('provincia');
         });
         
         Schema::table('professional', function(Blueprint $table) {
@@ -62,10 +60,6 @@ class CreateProfessional extends Migration
         
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('cidade_id')->references('id')->on('cidade');
-        });
-        
-        Schema::table('professional', function(Blueprint $table) {
-            $table->foreign('classe_id')->references('id')->on('classe');
         });
     }
 
