@@ -22,8 +22,8 @@ class CreateProfessional extends Migration
             $table->string('numero_documento');
             $table->timestamp('data_emissao_documento')->nullable();
             $table->timestamp('data_validade_documento')->nullable();
-            $table->integer('nacionalidade_id')->unsigned();
             $table->integer('naturalidade_provincia_id')->unsigned();
+            $table->integer('naturalidade_distrito_id')->unsigned();
             $table->integer('endereco_provincia_id')->unsigned();
             $table->integer('distrito_id')->unsigned();
             $table->string('cidade');
@@ -36,6 +36,7 @@ class CreateProfessional extends Migration
             $table->boolean('tem_ensino_geral');
             $table->boolean('tem_ensino_tecnico');
             $table->boolean('tem_ensino_universitario');
+            $table->integer('classe_id')->unsigned();
             $table->integer('telefone');
             $table->string('email');
             $table->timestamps();
@@ -46,11 +47,11 @@ class CreateProfessional extends Migration
         });
         
         Schema::table('professional', function(Blueprint $table) {
-            $table->foreign('nacionalidade_id')->references('id')->on('nacionalidade');
+            $table->foreign('naturalidade_provincia_id')->references('id')->on('provincia');
         });
         
         Schema::table('professional', function(Blueprint $table) {
-            $table->foreign('naturalidade_provincia_id')->references('id')->on('provincia');
+            $table->foreign('naturalidade_distrito_id')->references('id')->on('distrito');
         });
         
         Schema::table('professional', function(Blueprint $table) {
@@ -59,6 +60,10 @@ class CreateProfessional extends Migration
         
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('distrito_id')->references('id')->on('distrito');
+        });
+        
+        Schema::table('professional', function(Blueprint $table) {
+            $table->foreign('classe_id')->references('id')->on('classe');
         });
     }
 

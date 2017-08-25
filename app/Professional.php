@@ -28,6 +28,11 @@ class Professional extends Model
         {
             return $this->belongsTo(Provincia::class);
         }
+        
+        public function NaturalidadeDistrito()
+        {
+            return $this->belongsTo(Distrito::class);
+        }
 
         public function EnderecoProvincia()
         {
@@ -37,6 +42,11 @@ class Professional extends Model
         public function Distrito()
         {
             return $this->belongsTo(Distrito::class);
+        }
+        
+        public function Classe()
+        {
+            return $this->belongsTo(Classe::class);
         }
 
 }

@@ -79,7 +79,7 @@
 					<div class="row">
 
 						<div class="col-lg-2">{!!
-							Form::label('lnationality',trans('messages.collaborator.citizenship').'
+							Form::label('lnationality',trans('messages.collaborator.course.school.province').'
 							:', ['for' => 'nationality' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::select('naturalidade_provincia',$naturalidade_provincias, null, 
                                                     ['class' => 'form-control ', 'id' => 'naturalidade_provincia']) !!}</div>

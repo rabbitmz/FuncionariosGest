@@ -119,7 +119,7 @@ class ColaboratorController extends Controller
         $professional->naturalidade_distrito_id=$request->input('naturalidade_distrito');
         $professional->endereco_provincia_id=$request->input('endereco_provincia');
         $professional->distrito_id=$request->input('endereco_distrito');
-        $professional->cidade_id=$request->$request->addressCity;
+        $professional->cidade=$request->addressCity;
         $professional->bairro=$request->neighborhood;
         $professional->rua=$request->street;
         $professional->quarteirao=$request->block;
