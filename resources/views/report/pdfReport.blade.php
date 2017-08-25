@@ -82,12 +82,12 @@ body {
 			<td>{{ $professional->genero }}</td>
 			
 			<td>{{ Carbon\Carbon::parse($professional->data_nascimento)->format('d-m-Y') }}</td>
-			<td>{{ $professional->data_nascimento }}</td>
+			<td>{{ $professional->numero_documento }}</td>
 			<td>{{ $professional->telefone }}</td>
 			<td>{{ $professional->NaturalidadeProvincia->nome }}</td>
 			<td>{{ $professional->cidade }}</td> @foreach ($professional->professions as $profession)
 			<td>{{ $profession->descricao }}</td>
-			<td>{{ $profession->descricao }}</td> @endforeach
+			<td>{{  $profession->anosExperiencia($profession->data_inicio,$profession->data_fim) }}</td> @endforeach
 
 		</tr>
 		@endforeach

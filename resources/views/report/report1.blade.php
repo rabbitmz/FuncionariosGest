@@ -113,7 +113,7 @@
 												]) !!} {!! Form::checkbox('technicalEducation',
 												'technicalEducation') !!}</div>
 											<div class="col-lg-2 col-lg-offset-3">{!!
-												Form::label('lgeneralEducation',trans('messages.collaborator.educationLevel.university').'
+												Form::label('luniEducation',trans('messages.collaborator.educationLevel.university').'
 												:', ['class' => 'radio-inline','for' => 'university' ]) !!}
 												{!! Form::checkbox('university', 'university') !!}</div>
 										</div>

@@ -26,17 +26,23 @@ class ProfessionalSearch {
 		
 		if ($filters->has ( 'addressProv' )) {
 			$query->where ( 'endereco_provincia_id', '=', $filters->input ( 'addressProv' ) );
-		}
-		
-
-		
+		}		
 		if ($filters->has ( 'educationLevel' ) && strcmp($filters->input ('educationLevel'),'NONE')!=0) {
 			$query->where ( 'tem_nivel_academico', '=', $filters->input ( 'educationLevel' ) );
 		}
 		
-		if ($filters->has ( 'profession1' )) {
-			$query->where ( 'endereco_provincia_id', '=', $filters->input ( 'profession1' ) );
+		if ($filters->has ( 'generalEducation' )) {
+			$query->where ( 'tem_ensino_geral', '=', '1');
+			$query->where ( 'classe_id', '=', $filters->input ( 'schooLevel' ));
 		}
+		if ($filters->has ( 'technicalEducation' )) {
+			$query->where ( 'tem_ensino_tecnico', '=', '1');
+		}
+		if ($filters->has ( 'university' )) {
+			$query->where ( 'tem_ensino_universitario', '=', '1');
+		}
+		
+	
 		
 // 		if($filters->has('ageMin') && strcmp($filters->input ('ageMin'),'0')!=0)
 // 		{
