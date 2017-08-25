@@ -44,6 +44,7 @@ return [
 		'collaborator.nationality' => 'Nacionalidade',
 		'collaborator.citizenship' => 'Naturalidade',
 		'collaborator.birthDate' => 'Data de Nascimento',
+                'collaborator.district' => 'Distrito',
 		'collaborator.city' => 'Cidade',
 		'collaborator.house' => 'Casa N&deg;',
 		'collaborator.block' => 'Quarteir&atilde;o N&deg;',

@@ -20,7 +20,7 @@ Route::get ( '/', function () {
 
 //Create Colaborator
 Route::get("/createColaborator", ['as' => 'createEmployee', 'uses' => 'ColaboratorController@colaboratorForm']);
-Route::post("/createColaborator/page1", ['uses' => 'ColaboratorController@storeColaboratorForm']);
+Route::post("/createColaborator", ['uses' => 'ColaboratorController@storeColaboratorForm']);
 Route::get("/createColaborator/page1", ['uses' => 'ColaboratorController@onPageOne']);
 Route::post("/createColaborator/page2", ['uses' => 'ColaboratorController@onPageTwo']);
 Route::post("/createColaborator/page3", ['uses' => 'ColaboratorController@onPageThree']);

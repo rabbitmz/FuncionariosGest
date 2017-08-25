@@ -94,14 +94,7 @@ class ColaboratorController extends Controller
     }    
   
     public function colaboratorForm()
-    {
-        $professional= new Professional;
-        
-        
-        
-        $professional->nome=$request->name;
-        $professional->genero=$request->input('gender');
-        
+    {      
         return view('colaborator.create', [
             'naturalidade_provincias' => Provincia::pluck('nome','id'),
             'naturalidade_distritos' => Distrito::pluck('nome','id'),
@@ -111,16 +104,17 @@ class ColaboratorController extends Controller
         ]);
     }
     
-    public function storeColaboratorForm()
+    public function storeColaboratorForm(Request $request)
     {
+       $professional= new Professional;
         
-        return view('colaborator.create', [
-            'naturalidade_provincias' => Provincia::pluck('nome','id'),
-            'naturalidade_distritos' => Distrito::pluck('nome','id'),
-            'endereco_provincias' => Provincia::pluck('nome','id'),
-            'endereco_distritos' => Distrito::pluck('nome','id'),
-            'classes' => Classe::orderBy('id','asc')->pluck('descricao','id'),
-        ]);
+        $professional->nome=$request->name;
+        $professional->genero=$request->input('gender');
+        
+        $professional->save();
+        
+        return redirect('/createColaborator/page1'); 
+        
     }
     
     public function onPageOne(Request $request)
