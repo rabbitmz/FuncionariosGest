@@ -8,6 +8,7 @@ use App\Provincia;
 use PDF;
 use Carbon\Carbon;
 use App\Cidade;
+use App\Profissao;
 
 class ReportController extends Controller {
 	/**
@@ -28,9 +29,10 @@ class ReportController extends Controller {
 		}
 		
 		$provincias = Provincia::pluck('nome','id');
-		$cidades = Cidade::pluck('nome','id');
+	
+		$profissoes = Profissao::pluck('descricao','id');
 		// Show page with filters
-		return view ( "report.report1", compact('ages','experiencesYears','provincias','cidades'));
+		return view ( "report.report1", compact('ages','experiencesYears','provincias','cidades','profissoes'));
 		
 	}
 	

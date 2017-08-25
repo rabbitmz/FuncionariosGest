@@ -103,7 +103,7 @@
 							['for' => 'city' ]) !!}</div>
 						<div class="col-lg-2">
 								{!!
-							Form::text('city',$professional->Cidade->nome,['class' =>
+							Form::text('city',$professional->cidade,['class' =>
 							'form-control ', 'id' => 'city','disabled'])
 							!!}
 						</div>

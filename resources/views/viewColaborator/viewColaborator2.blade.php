@@ -51,7 +51,7 @@
 							<td>{{ $profession->descricao }}</td>							
 							 @endforeach
 								<td>{{ $professional->NaturalidadeProvincia->nome }}</td>
-							<td>{{ $professional->Cidade->nome}}</td>
+							<td>{{ $professional->cidade}}</td>
 							<td>{{link_to_route('showColaborator', $title = null, $parameters = [$professional->id], $attributes = [])}}</td>
 						</tr>
 						@endforeach

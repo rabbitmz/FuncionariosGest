@@ -42,19 +42,19 @@
 									<th data-name="contactPhone">{{__('messages.collaborator.phoneNumber')}}</th>
 									<th data-name="neighboor">{{__('messages.collaborator.neighborhood')}}</th>
 									<th data-name="provincia">{{__('messages.collaborator.course.school.province')}}</th>
-									<th data-name="localidade">{{__('messages.collaborator.locality')}}</th>
+									<th data-name="localidade">{{__('messages.collaborator.city')}}</th>
 
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>{{ $professional->genero }}</td>
-									<td>{{ $professional->data_nascimento }}</td>
+									<td>{{ Carbon\Carbon::parse($professional->data_nascimento)->format('d-m-Y') }}</td>
 									<td>{{ $professional->numero_documento }}</td>
 									<td>{{ $professional->bairro }}</td>
 									<td>{{ $professional->telefone }}</td>
-									<td>teste</td>
-									<td>teeste</td>
+									<td>{{ $professional->NaturalidadeProvincia->nome }}</td>
+									<td>{{ $professional->cidade}}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -65,8 +65,12 @@
 							<div class="form-group required">
 								<label class="col-sm-3 control-label boldText">{{__('messages.collaborator.profession.primary')}}</label>
 								<label class="col-sm-3">{{ $profession->descricao }}</label> <label
-									class="col-sm-3 control-label"><span class="boldText">{{__('messages.collaborator.yearsOfExperience')}}</span></label>
-								<label class="col-sm-3">{{ $profession->descricao }}</label>
+									class="col-sm-3 control-label">
+									<span class="boldText">{{__('messages.collaborator.yearsOfExperience')}}</span></label>
+								<label class="col-sm-3">
+								{{  $profession->anosExperiencia($profession->data_inicio,$profession->data_fim)
+									
+								 }}</label>
 							</div>
 
 							@endforeach

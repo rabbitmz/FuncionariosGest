@@ -43,14 +43,18 @@ body {
 }
 </style>
 <h2 align="center" class="tt">
-<img  alt="logo" src="images/fme.jpg" width="100" height="60" />
-<br/>Federação Moçambicana de Empreteiros
+	<img alt="logo" src="images/fme.jpg" width="100" height="60" /> <br />Federação
+	Moçambicana de Empreteiros
 </h2>
 <br />
-<p><span class="boldText">Data de Impressão&nbsp;&nbsp;&nbsp;:</span>
-				{{$currentDate}}</p>
-<p><span class="boldText">Funcionário da FME :</span> default</p>
-		
+<p>
+	<span class="boldText">Data de Impressão&nbsp;&nbsp;&nbsp;:</span>
+	{{$currentDate}}
+</p>
+<p>
+	<span class="boldText">Funcionário da FME :</span> default
+</p>
+
 
 <br />
 <h1 align="center">Listagem de Colaboradores</h1>
@@ -61,11 +65,10 @@ body {
 			<th>Nome</th>
 			<th>Sexo</th>
 			<th>Data de Nascimento</th>
-			<th>N de Documento de Identificacao</th>
+			<th>N de Documento de Identificação</th>
 			<th>N de Telefone</th>
-			<th>Bairro</th>
 			<th>Provincia</th>
-			<th>Localidade</th>
+			<th>Cidade</th>
 			<th>Profissão Primaria</th>
 			<th>Anos de Experiencia</th>
 			<th>Profissão secundaria</th>
@@ -77,12 +80,12 @@ body {
 		<tr>
 			<td>{{ $professional->nome }}</td>
 			<td>{{ $professional->genero }}</td>
+			
+			<td>{{ Carbon\Carbon::parse($professional->data_nascimento)->format('d-m-Y') }}</td>
 			<td>{{ $professional->data_nascimento }}</td>
-			<td>{{ $professional->numero_documento }}</td>
-			<td>{{ $professional->bairro }}</td>
 			<td>{{ $professional->telefone }}</td>
-			<td>teste</td>
-			<td>teeste</td> @foreach ($professional->professions as $profession)
+			<td>{{ $professional->NaturalidadeProvincia->nome }}</td>
+			<td>{{ $professional->cidade }}</td> @foreach ($professional->professions as $profession)
 			<td>{{ $profession->descricao }}</td>
 			<td>{{ $profession->descricao }}</td> @endforeach
 
@@ -91,6 +94,9 @@ body {
 	</tbody>
 </table>
 <footer>
-<p align="center" class="boldText"><small>Dados Produzidos pela Federação Moçambicana de Empreteiros.<br/>
-Não autorizada a replicada e distribuição desta informação.</small></p>
+	<p align="center" class="boldText">
+		<small>Dados Produzidos pela Federação Moçambicana de Empreteiros.<br />
+			Não autorizada a replicada e distribuição desta informação.
+		</small>
+	</p>
 </footer>

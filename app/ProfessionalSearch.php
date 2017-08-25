@@ -28,12 +28,14 @@ class ProfessionalSearch {
 			$query->where ( 'endereco_provincia_id', '=', $filters->input ( 'addressProv' ) );
 		}
 		
-		if ($filters->has ( 'addressCity' )) {
-			$query->where ( 'cidade_id', '=', $filters->input ( 'addressCity' ) );
-		}
+
 		
 		if ($filters->has ( 'educationLevel' ) && strcmp($filters->input ('educationLevel'),'NONE')!=0) {
 			$query->where ( 'tem_nivel_academico', '=', $filters->input ( 'educationLevel' ) );
+		}
+		
+		if ($filters->has ( 'profession1' )) {
+			$query->where ( 'endereco_provincia_id', '=', $filters->input ( 'profession1' ) );
 		}
 		
 // 		if($filters->has('ageMin') && strcmp($filters->input ('ageMin'),'0')!=0)

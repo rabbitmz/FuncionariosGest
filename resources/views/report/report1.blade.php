@@ -74,19 +74,7 @@
 
 							</div>
 						</div>
-
-						<div class="form-group">
-							<div class="row">
-
-								<div class="col-lg-2">{!!
-									Form::label('laddressCity',trans('messages.collaborator.city').'
-									:', ['for' => 'addressCity' ]) !!}</div>
-								<div class="col-lg-3">{!! Form::select('addressCity', $cidades,
-									null, ['class' => 'form-control ', 'id' => 'addressCity','placeholder' => 'Selecione uma provincia']) !!}</div>
-
-							</div>
-						</div>
-					</div>
+				</div>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-heading sub-panel-color-heading">
@@ -163,10 +151,8 @@
 								<div class="col-lg-2">{!!
 									Form::label('lprofession1',trans('messages.collaborator.profession.primary').'
 									:', ['for' => 'profession1' ]) !!}</div>
-								<div class="col-lg-3">{!! Form::select('profession1', ['NONE' =>
-									'Selecione a profissão primária','pedreiro' => 'Pedreiro',
-									'canalizador' => 'Canalizador'], null, ['class' =>
-									'form-control ', 'id' => 'profession1']) !!}</div>
+								<div class="col-lg-3">{!! Form::select('profession1', $profissoes, null, ['class' =>
+									'form-control ', 'id' => 'profession1','placeholder' => 'Selecione uma profissão']) !!}</div>
 								<div class="col-lg-2	">{!!
 									Form::label('lyearsOfExperience',trans('messages.collaborator.yearsOfExperience').'
 									:', ['for' => 'yearsOfExperience' ]) !!}</div>
@@ -187,10 +173,8 @@
 								<div class="col-lg-2">{!!
 									Form::label('lprofession2',trans('messages.collaborator.profession.other').'
 									:', ['for' => 'profession2' ]) !!}</div>
-								<div class="col-lg-3">{!! Form::select('profession1', ['NONE' =>
-									'Selecione a profissão secundária','pedreiro' => 'Pedreiro',
-									'canalizador' => 'Canalizador'], null, ['class' =>
-									'form-control ', 'id' => 'profession2']) !!}</div>
+								<div class="col-lg-3">{!! Form::select('profession1', $profissoes, null, ['class' =>
+									'form-control ', 'id' => 'profession2','placeholder' => 'Selecione uma profissão']) !!}</div>
 
 								<div class="col-lg-2	">{!!
 									Form::label('lyearsOfExperience2',trans('messages.collaborator.yearsOfExperience').'

@@ -50,7 +50,7 @@
 							<td>{{ $profession->descricao }}</td>							
 							@endforeach
 							<td>{{ $professional->NaturalidadeProvincia->nome }}</td>
-							<td>{{ $professional->Cidade->nome}}</td>
+							<td>{{ $professional->cidade}}</td>
 						</tr>
 						@endforeach
 
