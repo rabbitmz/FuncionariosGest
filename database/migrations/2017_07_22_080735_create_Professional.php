@@ -26,13 +26,16 @@ class CreateProfessional extends Migration
             $table->integer('naturalidade_provincia_id')->unsigned();
             $table->integer('endereco_provincia_id')->unsigned();
             $table->integer('distrito_id')->unsigned();
-            $table->integer('cidade_id')->unsigned();
+            $table->string('cidade');
             $table->string('bairro');
             $table->string('rua');
             $table->string('quarteirao');
             $table->string('celula');
             $table->string('casa');
             $table->boolean('tem_nivel_academico');
+            $table->boolean('tem_ensino_geral');
+            $table->boolean('tem_ensino_tecnico');
+            $table->boolean('tem_ensino_universitario');
             $table->integer('telefone');
             $table->string('email');
             $table->timestamps();
@@ -56,10 +59,6 @@ class CreateProfessional extends Migration
         
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('distrito_id')->references('id')->on('distrito');
-        });
-        
-        Schema::table('professional', function(Blueprint $table) {
-            $table->foreign('cidade_id')->references('id')->on('cidade');
         });
     }
 

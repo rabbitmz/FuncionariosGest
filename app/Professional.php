@@ -39,9 +39,4 @@ class Professional extends Model
             return $this->belongsTo(Distrito::class);
         }
 
-        public function Cidade()
-        {
-            return $this->belongsTo(Cidade::class);
-        }
-
 }

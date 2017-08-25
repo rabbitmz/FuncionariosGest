@@ -107,9 +107,31 @@ class ColaboratorController extends Controller
     public function storeColaboratorForm(Request $request)
     {
        $professional= new Professional;
-        
+       
         $professional->nome=$request->name;
         $professional->genero=$request->input('gender');
+        $professional->data_nascimento=$request->birthDate;
+        $professional->tipo_documento_id=$request->input('documentype');
+        $professional->numero_documento=$request->identificationDocument;
+        $professional->data_emissao_documento=$request->dateIssue;
+        $professional->data_validade_documento=$request->dateValid;
+        $professional->naturalidade_provincia_id=$request->input('naturalidade_provincia');
+        $professional->naturalidade_distrito_id=$request->input('naturalidade_distrito');
+        $professional->endereco_provincia_id=$request->input('endereco_provincia');
+        $professional->distrito_id=$request->input('endereco_distrito');
+        $professional->cidade_id=$request->$request->addressCity;
+        $professional->bairro=$request->neighborhood;
+        $professional->rua=$request->street;
+        $professional->quarteirao=$request->block;
+        $professional->celula=$request->cell;
+        $professional->casa=$request->house;
+        $professional->tem_nivel_academico=$request->input('educationLevel');
+        $professional->tem_ensino_geral=$request->input('generalEducation');
+        $professional->tem_ensino_tecnico=$request->input('technicalEducation');
+        $professional->tem_ensino_universitario=$request->input('university');
+        $professional->classe_id=$request->input('classe');
+        $professional->telefone=$request->phoneNumber;
+        $professional->email=$request->email;
         
         $professional->save();
         

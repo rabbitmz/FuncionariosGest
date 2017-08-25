@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="panel-body">
-		{{Form::open(['url' => '/createColaborator/page1'])}}
+		{{Form::open()}}
 		<div class="panel panel-default">
 			<div class="panel-heading sub-panel-color-heading">
 				<span class="panel-heading-text"> {{
@@ -43,13 +43,9 @@
 						<div class="col-lg-2">{!!Form::label('lIdentificationDocumentType',trans('messages.collaborator.identificationDocument.type').'
 							:', ['for' => 'identificationDocument' ]) !!}</div>
 						<div class="col-lg-2">
-
-							<div class="input-group">
-								<label class="radio-inline"> <input type="radio" name="optradio">
-									BI
-								</label> <label class="radio-inline"><input type="radio"
-									name="optradio">Passport</label>
-							</div>
+                                                        {!! Form::select('documentype', ['1' =>
+							'BI', '2' => 'Passporte'], null, ['class' => 'form-control
+							', 'id' => 'documentype']) !!}
 						</div>
 
 					</div>
@@ -114,9 +110,8 @@
 						<div class="col-lg-2">{!!
 							Form::label('laddressCity',trans('messages.collaborator.city').'
 							:', ['for' => 'addressProv' ]) !!}</div>
-						<div class="col-lg-4">{!! Form::select('addressCity', ['Maputo' =>
-							'Maputo', 'Beira' => 'Beira'], null, ['class' => 'form-control ',
-							'id' => 'addressCity']) !!}</div>
+						<div class="col-lg-4">{!! Form::text('addressCity',null,['class' =>
+							'form-control ', 'id' => 'addressCity']) !!}</div>
 
 					</div>
 				</div>
@@ -179,8 +174,8 @@
 						<div class="col-lg-2">{!!
 							Form::label('lEducationLevel',trans('messages.collaborator.educationLevel').'
 							:', ['for' => 'educationLevel' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('educationLevel', ['WITH'
-							=> 'Com Escolaridade', 'WITHOUT' => 'Sem Escolaridade'], null,
+						<div class="col-lg-2">{!! Form::select('educationLevel', ['1'
+							=> 'Com Escolaridade', '0' => 'Sem Escolaridade'], null,
 							['class' => 'form-control ', 'id' => 'educationLevel']) !!}</div>
 
 					</div>
