@@ -7,6 +7,7 @@ use App\Professional;
 use App\ProfessionalSearch;
 use App\Provincia;
 use App\Distrito;
+use App\Classe;
 
 class ColaboratorController extends Controller
 {
@@ -94,14 +95,34 @@ class ColaboratorController extends Controller
   
     public function colaboratorForm()
     {
+        $professional= new Professional;
+        
+        
+        
+        $professional->nome=$request->name;
+        $professional->genero=$request->input('gender');
         
         return view('colaborator.create', [
             'naturalidade_provincias' => Provincia::pluck('nome','id'),
             'naturalidade_distritos' => Distrito::pluck('nome','id'),
             'endereco_provincias' => Provincia::pluck('nome','id'),
             'endereco_distritos' => Distrito::pluck('nome','id'),
+            'classes' => Classe::orderBy('id','asc')->pluck('descricao','id'),
         ]);
     }
+    
+    public function storeColaboratorForm()
+    {
+        
+        return view('colaborator.create', [
+            'naturalidade_provincias' => Provincia::pluck('nome','id'),
+            'naturalidade_distritos' => Distrito::pluck('nome','id'),
+            'endereco_provincias' => Provincia::pluck('nome','id'),
+            'endereco_distritos' => Distrito::pluck('nome','id'),
+            'classes' => Classe::orderBy('id','asc')->pluck('descricao','id'),
+        ]);
+    }
+    
     public function onPageOne(Request $request)
     {
     	return view("colaborator.create1");

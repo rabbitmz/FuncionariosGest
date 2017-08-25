@@ -209,12 +209,8 @@
 									<div class="col-lg-2">{!!
 										Form::label('lschooLevel',trans('messages.collaborator.school.level').'
 										:', ['for' => 'schooLevel' ]) !!}</div>
-									<div class="col-lg-3">{!! Form::select('schooLevel', ['1' => '1
-										Classe', '2' => '2 Classe','3' => '3 Classe','4' => '4
-										Classe','5' => '5 Classe','6' => '6 Classe','7' => '7
-										Classe','8' => '8 Classe','9' => '9 Classe','10' => '10
-										Classe','11' => '11 Classe','12' => '12 Classe'], null,
-										['class' => 'form-control ', 'id' => 'schooLevel']) !!}</div>
+									<div class="col-lg-3">{!! Form::select('classe',$classes, null, 
+                                                                        ['class' => 'form-control ', 'id' => 'classe']) !!}</div>
 								</div>
 							</div>
 						</div>
