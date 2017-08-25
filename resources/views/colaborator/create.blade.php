@@ -43,9 +43,8 @@
 						<div class="col-lg-2">{!!Form::label('lIdentificationDocumentType',trans('messages.collaborator.identificationDocument.type').'
 							:', ['for' => 'identificationDocument' ]) !!}</div>
 						<div class="col-lg-2">
-                                                        {!! Form::select('documentype', ['1' =>
-							'BI', '2' => 'Passporte'], null, ['class' => 'form-control
-							', 'id' => 'documentype']) !!}
+                                                        {!! Form::select('documentype',$tipo_documento, null, 
+                                                        ['class' => 'form-control ', 'id' => 'documentype']) !!}
 						</div>
 
 					</div>

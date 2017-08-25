@@ -8,6 +8,7 @@ use App\ProfessionalSearch;
 use App\Provincia;
 use App\Distrito;
 use App\Classe;
+use App\Tipo_documento;
 
 class ColaboratorController extends Controller
 {
@@ -96,6 +97,7 @@ class ColaboratorController extends Controller
     public function colaboratorForm()
     {      
         return view('colaborator.create', [
+            'tipo_documento' => Tipo_documento::orderBy('id','asc')->pluck('descricao','id'),
             'naturalidade_provincias' => Provincia::pluck('nome','id'),
             'naturalidade_distritos' => Distrito::pluck('nome','id'),
             'endereco_provincias' => Provincia::pluck('nome','id'),

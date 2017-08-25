@@ -15,13 +15,13 @@ class TipoDocumentoTableSeeder extends Seeder
     			'descricao' => 'BI',   	    			
     	] );
     	DB::table ( 'tipo_documento' )->insert ( [
-    			'descricao' => 'Cedula',
+    			'descricao' => 'Passporte',
     	] );
     	DB::table ( 'tipo_documento' )->insert ( [
     			'descricao' => 'Talão De BI',
     	] );
     	DB::table ( 'tipo_documento' )->insert ( [
-    			'descricao' => 'Passport',
+    			'descricao' => 'Cedula',
     	] );
     	DB::table ( 'tipo_documento' )->insert ( [
     			'descricao' => 'Cartão de Eleitor',
