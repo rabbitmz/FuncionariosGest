@@ -19,7 +19,7 @@
 					<div class="row">
 						<div class="col-lg-2">{!!
 							Form::label('lname',trans('messages.collaborator.name').' :',
-							['for' => 'name', 'readonly' ]) !!}</div>
+							['for' => 'name', 'disabled' ]) !!}</div>
 						<div class="col-lg-6">{!! Form::text('name',$professional->nome,['class' =>
 							'form-control ', 'id' => 'name','readonly']) !!}</div>
 						<div class="col-lg-2	">{!!
@@ -27,7 +27,7 @@
 							['for' => 'gender' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::select('gender', ['M' =>
 							'Masculino', 'F' => 'Feminino'], $professional->genero, ['class' => 'form-control
-							', 'id' => 'gender','readonly']) !!}</div>
+							', 'id' => 'gender','disabled']) !!}</div>
 					</div>
 				</div>
 
@@ -38,7 +38,7 @@
 							:', ['for' => 'birthDate' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::text('birthDate',Carbon\Carbon::parse($professional->data_nascimento)->format('d-m-Y')  
 						,['class' =>
-							'form-control ', 'id' => 'birthDate','readonly','placeholder' =>
+							'form-control ', 'id' => 'birthDate','disabled','placeholder' =>
 							'dd/mm/aaaa']) !!}</div>
 						<div class="col-lg-2">{!!Form::label('lIdentificationDocumentType',trans('messages.collaborator.identificationDocument.type').'
 							:', ['for' => 'identificationDocument' ]) !!}</div>
@@ -56,8 +56,6 @@
 				</div>
 				<div class="form-group">
 					<div class="row">
-
-
 						<div class="col-lg-2">{!!
 							Form::label('lIdentificationDocument',trans('messages.collaborator.identificationDocument').'
 							:', ['for' => 'identificationDocument' ]) !!}</div>
@@ -71,14 +69,14 @@
 						<div class="col-lg-2">{!! Form::text('dateIssue',Carbon\Carbon::parse($professional->data_emissao_documento)->format('d-m-Y')
 						,['class' =>
 							'form-control ', 'id' => 'dateIssue', 'placeholder' =>
-							'dd/mm/aaaa','readonly']) !!}</div>
+							'dd/mm/aaaa','disabled']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('ldateValid',trans('messages.collaborator.identificationDocument.dateValid').'
 							:', ['for' => 'dateValid' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::text('dateValid',Carbon\Carbon::parse($professional->data_validade_documento)->format('d-m-Y')
 						,['class' =>
 							'form-control ', 'id' => 'dateValid', 'placeholder' =>
-							'dd/mm/aaaa','readonly']) !!}</div>
+							'dd/mm/aaaa','disabled']) !!}</div>
 					</div>
 				</div>
 
@@ -89,21 +87,26 @@
 							:', ['for' => 'nationality' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::select('nationality',
 							['Mocambique' => 'Mocambicana', 'AfricaDoSul' => 'Sul Africana'],
-							$professional->numero_documento, ['class' => 'form-control ', 'id' =>
-							'nationality','readonly']) !!}</div>
+							$professional->Nacionalidade->nome, ['class' => 'form-control ', 'id' =>
+							'nationality','disabled']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('lnationality',trans('messages.collaborator.citizenship').'
 							:', ['for' => 'nationality' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('nationality',
-							['Mocambique' => 'Maputo', 'AfricaDoSul' => 'Beira'], $professional->numero_documento,
-							['class' => 'form-control ', 'id' => 'nationality','readonly'])
-							!!}</div>
+						<div class="col-lg-2">
+									{!!
+							Form::text('nationality',$professional->NaturalidadeProvincia->nome,['class' =>
+							'form-control ', 'id' => 'nationality','disabled'])
+							!!}
+						</div>
 						<div class="col-lg-2">{!!
 							Form::label('lCity',trans('messages.collaborator.city').' :',
 							['for' => 'city' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('city', ['Mocambique' =>
-							'Maputo', 'AfricaDoSul' => 'Beira'], $professional->numero_documento, ['class' =>
-							'form-control ', 'id' => 'city' ,'readonly']) !!}</div>
+						<div class="col-lg-2">
+								{!!
+							Form::text('city',$professional->Cidade->nome,['class' =>
+							'form-control ', 'id' => 'city','disabled'])
+							!!}
+						</div>
 					</div>
 				</div>
 
@@ -122,18 +125,18 @@
 							Form::label('lneighborhood',trans('messages.collaborator.neighborhood').'
 							:', ['for' => 'neighborhood' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::text('neighborhood', $professional->bairro,['class'
-							=> 'form-control ', 'id' => 'neighborhood','readonly']) !!}</div>
+							=> 'form-control ', 'id' => 'neighborhood','disabled']) !!}</div>
 
 						<div class="col-lg-2">{!!
 							Form::label('lstreet',trans('messages.collaborator.street').' :',
 							['for' => 'street' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::text('street',$professional->rua,['class' =>
-							'form-control ', 'id' => 'street','readonly']) !!}</div>
+							'form-control ', 'id' => 'street','disabled']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('lblock',trans('messages.collaborator.block').' :',
 							['for' => 'block' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::text('block',$professional->quarteirao,['class' =>
-							'form-control ', 'type'=>'Number','id' => 'block','readonly'])
+							'form-control ', 'type'=>'Number','id' => 'block','disabled'])
 							!!}</div>
 					</div>
 				</div>
@@ -143,13 +146,13 @@
 							Form::label('lcell',trans('messages.collaborator.cell').' :',
 							['for' => 'cell' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::text('cell',$professional->celula,['class' =>
-							'form-control ', 'type'=>'Number','id' => 'block','readonly'])
+							'form-control ', 'type'=>'Number','id' => 'block','disabled'])
 							!!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('lCity',trans('messages.collaborator.house').' :',
 							['for' => 'city' ]) !!}</div>
 						<div class="col-lg-2">{!! Form::text('house',$professional->casa,['class' =>
-							'form-control ', 'type'=>'Number','id' => 'house','readonly'])
+							'form-control ', 'type'=>'Number','id' => 'house','disabled'])
 							!!}</div>
 					</div>
 				</div>
@@ -167,10 +170,10 @@
 						<div class="col-lg-2">{!!
 							Form::label('lEducationLevel',trans('messages.collaborator.educationLevel').'
 							:', ['for' => 'educationLevel' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('educationLevel', ['WITH'
-							=> 'Com Escolaridade', 'WITHOUT' => 'Sem Escolaridade'], $professional->tem_nivel_academico,
+						<div class="col-lg-2">{!! Form::select('educationLevel', ['1'
+							=> 'Com Escolaridade', '0' => 'Sem Escolaridade'], $professional->tem_nivel_academico,
 							['class' => 'form-control ', 'id' =>
-							'educationLevel','readonly']) !!}</div>
+							'educationLevel','disabled']) !!}</div>
 						<div id="educationLevelSection">
 							<div class="col-lg-2">{!!
 								Form::label('lgeneralEducation',trans('messages.collaborator.educationLevel.generalEducation').'

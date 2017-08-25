@@ -47,10 +47,10 @@
 							<td>{{ $professional->numero_documento }}</td>
 							<td>{{ $professional->genero }}</td>
 							 @foreach ($professional->professions as $profession)
-							<td>{{ $profession->descricao }}</td>
-							<td>{{ $profession->descricao }}</td> @endforeach
-							<td>{{__('messages.collaborator.course.school.province')}}</td>
-							<td>{{__('messages.collaborator.locality')}}</td>
+							<td>{{ $profession->descricao }}</td>							
+							@endforeach
+							<td>{{ $professional->NaturalidadeProvincia->nome }}</td>
+							<td>{{ $professional->Cidade->nome}}</td>
 						</tr>
 						@endforeach
 

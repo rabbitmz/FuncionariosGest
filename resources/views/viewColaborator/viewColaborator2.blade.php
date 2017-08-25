@@ -50,8 +50,8 @@
 							 @foreach ($professional->professions as $profession)
 							<td>{{ $profession->descricao }}</td>							
 							 @endforeach
-							<td>{{__('messages.collaborator.course.school.province')}}</td>
-							<td>{{__('messages.collaborator.locality')}}</td>
+								<td>{{ $professional->NaturalidadeProvincia->nome }}</td>
+							<td>{{ $professional->Cidade->nome}}</td>
 							<td>{{link_to_route('showColaborator', $title = null, $parameters = [$professional->id], $attributes = [])}}</td>
 						</tr>
 						@endforeach

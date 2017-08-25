@@ -28,7 +28,8 @@
 								<div class="col-lg-2">{!!
 									Form::label('lgender',trans('messages.collaborator.gender').'
 									:', ['for' => 'gender' ]) !!}</div>
-								<div class="col-lg-3">{!! Form::select('gender', ['N' =>
+								<div class="col-lg-3">
+								{!! Form::select('gender', ['N' =>
 									'Selecione o Genero','M' => 'Masculino', 'F' => 'Feminino'],
 									null, ['class' => 'form-control ', 'id' => 'gender']) !!}</div>
 
@@ -49,7 +50,7 @@
 									:', ['for' => 'ageMax' ]) !!}</div>
 								<div class="col-lg-3">{!! Form::select('ageMax', (['0' =>
 									'Selecione a idade maxima'] + $ages), null, ['class' =>
-									'form-control ', 'id' => 'ageMin']) !!}</div>
+									'form-control ', 'id' => 'ageMax']) !!}</div>
 
 							</div>
 						</div>
@@ -67,7 +68,8 @@
 								<div class="col-lg-2">{!!
 									Form::label('laddressProv',trans('messages.collaborator.course.school.province').'
 									:', ['for' => 'addressProv' ]) !!}</div>
-								<div class="col-lg-3">{!! Form::select('addressProv', $provincias, null, ['class' => 'form-control ', 'id' =>
+								<div class="col-lg-3">
+								{!! Form::select('addressProv', $provincias, null, ['class' => 'form-control ', 'id' =>
 									'addressProv','placeholder' => 'Selecione uma provincia']) !!}</div>
 
 							</div>
@@ -75,19 +77,12 @@
 
 						<div class="form-group">
 							<div class="row">
-								<div class="col-lg-2">{!!
-									Form::label('llocality',trans('messages.collaborator.locality').'
-									:', ['for' => 'nationality' ]) !!}</div>
-								<div class="col-lg-3">{!! Form::select('llocality', ['NONE' =>
-									'Selecione a localidade','Magude' => 'Magude', 'Bunga' =>
-									'Bunga'], null, ['class' => 'form-control ', 'id' =>
-									'llocality']) !!}</div>
+
 								<div class="col-lg-2">{!!
 									Form::label('laddressCity',trans('messages.collaborator.city').'
 									:', ['for' => 'addressCity' ]) !!}</div>
-								<div class="col-lg-3">{!! Form::select('addressCity', ['NONE' =>
-									'Selecione a cidade','Maputo' => 'Maputo', 'Beira' => 'Beira'],
-									null, ['class' => 'form-control ', 'id' => 'addressCity']) !!}</div>
+								<div class="col-lg-3">{!! Form::select('addressCity', $cidades,
+									null, ['class' => 'form-control ', 'id' => 'addressCity','placeholder' => 'Selecione uma provincia']) !!}</div>
 
 							</div>
 						</div>
@@ -106,8 +101,8 @@
 									Form::label('lEducationLevel',trans('messages.collaborator.educationLevel').'
 									:', ['for' => 'educationLevel' ]) !!}</div>
 								<div class="col-lg-3">{!! Form::select('educationLevel', ['NONE'
-									=> 'Selecione o Nivel de Escolaridade','WITH' => 'Com
-									Escolaridade', 'WITHOUT' => 'Sem Escolaridade'], null, ['class'
+									=> 'Selecione o Nivel de Escolaridade','1' => 'Com
+									Escolaridade', '0' => 'Sem Escolaridade'], null, ['class'
 									=> 'form-control ', 'id' => 'educationLevel']) !!}</div>
 
 							</div>

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$('#educationLevel').on('change', function() {
-		if (this.value == 'WITH') {
+		if (this.value == '1') {
 			$("#educationLevelSection").show();
 		} else {
 			$("#educationLevelSection").hide();

@@ -22,7 +22,6 @@
 			</div>
 
 			<div class="panel-body">
-
 				@foreach ($resultSet as $professional)
 				<div class="panel panel-default">
 					<div class="panel-heading sub-panel-color-heading">
@@ -48,10 +47,7 @@
 								</tr>
 							</thead>
 							<tbody>
-
-
 								<tr>
-
 									<td>{{ $professional->genero }}</td>
 									<td>{{ $professional->data_nascimento }}</td>
 									<td>{{ $professional->numero_documento }}</td>

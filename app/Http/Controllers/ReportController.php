@@ -7,6 +7,7 @@ use App\ProfessionalSearch;
 use App\Provincia;
 use PDF;
 use Carbon\Carbon;
+use App\Cidade;
 
 class ReportController extends Controller {
 	/**
@@ -19,7 +20,7 @@ class ReportController extends Controller {
 		$ages = array ();
 		$experiencesYears = array ();
 		for($i = 17; $i <= 80; $i ++) {
-			$ages [$counter] = $i;
+			$ages [$i] = $i;
 			$counter = $counter + 1;
 		}
 		for($i = 0; $i <= 45; $i ++) {
@@ -27,8 +28,9 @@ class ReportController extends Controller {
 		}
 		
 		$provincias = Provincia::pluck('nome','id');
+		$cidades = Cidade::pluck('nome','id');
 		// Show page with filters
-		return view ( "report.report1", compact('ages','experiencesYears','provincias'));
+		return view ( "report.report1", compact('ages','experiencesYears','provincias','cidades'));
 		
 	}
 	
@@ -37,7 +39,8 @@ class ReportController extends Controller {
 	{
 		$resultSet = ProfessionalSearch::apply($request);		
 		session(['resultSet' => $resultSet]);
-		return view("report.report2")->with('resultSet',$resultSet);
+		$timenow =$request->input('addressProv');
+		return view("report.report2")->with('resultSet',$resultSet)->with('timenow',$timenow);
 	}
 	
 	public function downloadPdf()
