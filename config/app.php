@@ -1,6 +1,6 @@
 <?php
-return [ 
-		
+return [
+
 		/*
 		 * |--------------------------------------------------------------------------
 		 * | Application Name
@@ -10,7 +10,7 @@ return [
 		 * | framework needs to place the application's name in a notification or
 		 * | any other location as required by the application or its packages.
 		 */
-		
+
 		'name' => env ( 'APP_NAME', 'Laravel' ),
 
     /*
@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'debug' => env ( 'APP_DEBUG', false ),
+    'debug' => env ( 'APP_DEBUG', true ),
 
     /*
     |--------------------------------------------------------------------------
@@ -103,7 +103,7 @@ return [
     */
 
     'key' => env ( 'APP_KEY' ),
-		
+
 		'cipher' => 'AES-256-CBC',
 
     /*
@@ -120,7 +120,7 @@ return [
     */
 
     'log' => env ( 'APP_LOG', 'single' ),
-		
+
 		'log_level' => env ( 'APP_LOG_LEVEL', 'debug' ),
 
     /*
@@ -134,8 +134,8 @@ return [
     |
     */
 
-    'providers' => [ 
-				
+    'providers' => [
+
 				/*
 				 * Laravel Framework Service Providers...
 				 */
@@ -161,7 +161,7 @@ return [
 				Illuminate\Translation\TranslationServiceProvider::class,
 				Illuminate\Validation\ValidationServiceProvider::class,
 				Illuminate\View\ViewServiceProvider::class,
-			
+
 
         /*
          * Package Service Providers...
@@ -177,8 +177,8 @@ return [
 				App\Providers\EventServiceProvider::class,
 				App\Providers\RouteServiceProvider::class,
 				Collective\Html\HtmlServiceProvider::class,
-				Barryvdh\DomPDF\ServiceProvider::class 
-		
+				Barryvdh\DomPDF\ServiceProvider::class
+
 		],
 
     /*
@@ -192,8 +192,8 @@ return [
     |
     */
 
-    'aliases' => [ 
-				
+    'aliases' => [
+
 				'App' => Illuminate\Support\Facades\App::class,
 				'Artisan' => Illuminate\Support\Facades\Artisan::class,
 				'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -229,8 +229,8 @@ return [
 				'View' => Illuminate\Support\Facades\View::class,
 				'Form' => Collective\Html\FormFacade::class,
 				'Html' => Collective\Html\HtmlFacade::class,
-				'PDF' => Barryvdh\DomPDF\Facade::class 
-		
-		] 
+				'PDF' => Barryvdh\DomPDF\Facade::class
+
+		]
 
 ];

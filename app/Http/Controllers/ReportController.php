@@ -9,6 +9,7 @@ use PDF;
 use Carbon\Carbon;
 use App\Cidade;
 use App\Profissao;
+use App\Nivel_professional;
 
 class ReportController extends Controller {
 	/**
@@ -27,27 +28,27 @@ class ReportController extends Controller {
 		for($i = 0; $i <= 45; $i ++) {
 			$experiencesYears [$i] = $i;
 		}
-		
+
 		$provincias = Provincia::pluck('nome','id');
-	
 		$profissoes = Profissao::pluck('descricao','id');
+		$niveisProfissionais = Nivel_professional::pluck('descricao','id');
 		// Show page with filters
-		return view ( "report.report1", compact('ages','experiencesYears','provincias','cidades','profissoes'));
-		
+		return view ( "report.report1", compact('ages','experiencesYears','provincias','cidades','profissoes','niveisProfissionais'));
+
 	}
-	
-	
+
+
 	public function filter(Request $request)
 	{
-		$resultSet = ProfessionalSearch::apply($request);		
+		$resultSet = ProfessionalSearch::apply($request);
 		session(['resultSet' => $resultSet]);
 		$timenow =$request->input('addressProv');
 		return view("report.report2")->with('resultSet',$resultSet)->with('timenow',$timenow);
 	}
-	
+
 	public function downloadPdf()
 	{
-		$currentDate = Carbon::now()->format('d-m-Y');		
+		$currentDate = Carbon::now()->format('d-m-Y');
 		$resultSet= session('resultSet');
 		$pdf = PDF::loadView('report.pdfReport', compact('resultSet','currentDate'));
 		return $pdf->download('pdfReport.pdf');

@@ -6,7 +6,6 @@
 		<span class="panel-heading-text"> {{ __('messages.report.view.title')
 			}}</span>
 	</div>
-
 	<div class="panel-body">
 		{{Form::open(['url' => '/search'])}}
 		<div class="panel panel-default">
@@ -14,14 +13,12 @@
 				<span class="panel-heading-text"> {{
 					__('messages.report.view.Subtitle.page1') }}</span>
 			</div>
-
 			<div class="panel-body">
 				<div class="panel panel-default">
 					<div class="panel-heading sub-panel-color-heading">
 						<span class="panel-heading-text"> {{
 							__('messages.report.view.Subtitle.personal.data') }}</span>
 					</div>
-
 					<div class="panel-body">
 						<div class="form-group">
 							<div class="row">
@@ -32,7 +29,6 @@
 								{!! Form::select('gender', ['N' =>
 									'Selecione o Genero','M' => 'Masculino', 'F' => 'Feminino'],
 									null, ['class' => 'form-control ', 'id' => 'gender']) !!}</div>
-
 							</div>
 						</div>
 						<div class="form-group">
@@ -40,18 +36,15 @@
 								<div class="col-lg-2">{!!
 									Form::label('lageMin',trans('messages.report.view.age.min').'
 									:', ['for' => 'ageMin' ]) !!}</div>
-
 								<div class="col-lg-3">{!! Form::select('ageMin', (['0' =>
 									'Selecione a idade minima'] + $ages), null, ['class' =>
 									'form-control ', 'id' => 'ageMin']) !!}</div>
-
 								<div class="col-lg-2">{!!
 									Form::label('lageMax',trans('messages.report.view.age.max').'
 									:', ['for' => 'ageMax' ]) !!}</div>
 								<div class="col-lg-3">{!! Form::select('ageMax', (['0' =>
 									'Selecione a idade maxima'] + $ages), null, ['class' =>
 									'form-control ', 'id' => 'ageMax']) !!}</div>
-
 							</div>
 						</div>
 					</div>
@@ -61,7 +54,6 @@
 						<span class="panel-heading-text"> {{
 							__('messages.report.view.Subtitle.personal.address.data') }}</span>
 					</div>
-
 					<div class="panel-body">
 						<div class="form-group">
 							<div class="row">
@@ -71,7 +63,11 @@
 								<div class="col-lg-3">
 								{!! Form::select('addressProv', $provincias, null, ['class' => 'form-control ', 'id' =>
 									'addressProv','placeholder' => 'Selecione uma provincia']) !!}</div>
-
+									<div class="col-lg-2">{!!
+										Form::label('ldistrict','Distrito :', ['for' => 'district' ]) !!}</div>
+									<div class="col-lg-3">
+									{!! Form::select('district', $provincias, null, ['class' => 'form-control ', 'id' =>
+										'district','placeholder' => 'Selecione um distrito']) !!}</div>
 							</div>
 						</div>
 				</div>
@@ -81,7 +77,6 @@
 						<span class="panel-heading-text"> {{
 							__('messages.report.view.Subtitle.personal.school.data') }}</span>
 					</div>
-
 					<div class="panel-body">
 						<div class="form-group">
 							<div class="row">
@@ -92,11 +87,8 @@
 									=> 'Selecione o Nivel de Escolaridade','1' => 'Com
 									Escolaridade', '0' => 'Sem Escolaridade'], null, ['class'
 									=> 'form-control ', 'id' => 'educationLevel']) !!}</div>
-
 							</div>
 						</div>
-
-
 						<div class="form-group">
 							<div class="row">
 								<div id="educationLevelSection" style="display: none;">
@@ -119,7 +111,6 @@
 										</div>
 									</div>
 								</div>
-
 							</div>
 							<div class="form-group">
 								<div id="schoolevelDiv" style="display: none;">
@@ -144,7 +135,6 @@
 						<span class="panel-heading-text"> {{
 							__('messages.report.view.Subtitle.personal.experiencie.data') }}</span>
 					</div>
-
 					<div class="panel-body">
 						<div class="form-group">
 							<div class="row">
@@ -159,15 +149,10 @@
 								<div class="col-lg-2">{!! Form::select('yearsOfExperience',
 									(['0' => 'Selecione'] + $experiencesYears), null, ['class' =>
 									'form-control ', 'id' => 'yearsOfExperience']) !!}</div>
-
-								<div class="col-lg-3">{!! Form::select('level1', ['NONE' =>
-									'Selecione o nivel','MASTER' => 'Mestre', 'HELPER' =>
-									'Ajudante','ASSISTANT' => 'Auxiliar'], null, ['class' =>
-									'form-control ', 'id' => 'level1']) !!}</div>
-
+								<div class="col-lg-3">{!! Form::select('level1', $niveisProfissionais, null, ['class' =>
+									'form-control ', 'id' => 'level1','placeholder' => 'Selecione um nivel']) !!}</div>
 							</div>
 						</div>
-
 						<div class="form-group">
 							<div class="row">
 								<div class="col-lg-2">{!!
@@ -175,18 +160,14 @@
 									:', ['for' => 'profession2' ]) !!}</div>
 								<div class="col-lg-3">{!! Form::select('profession1', $profissoes, null, ['class' =>
 									'form-control ', 'id' => 'profession2','placeholder' => 'Selecione uma profissão']) !!}</div>
-
 								<div class="col-lg-2	">{!!
 									Form::label('lyearsOfExperience2',trans('messages.collaborator.yearsOfExperience').'
 									:', ['for' => 'yearsOfExperience2' ]) !!}</div>
 								<div class="col-lg-2">{!! Form::select('yearsOfExperience2',
 									(['0' => 'Selecione'] + $experiencesYears), null, ['class' =>
 									'form-control ', 'id' => 'yearsOfExperience2']) !!}</div>
-
-								<div class="col-lg-3">{!! Form::select('level2', ['NONE' =>
-									'Selecione o nivel','MASTER' => 'Mestre', 'HELPER' =>
-									'Ajudante','ASSISTANT' => 'Auxiliar'], null, ['class' =>
-									'form-control ', 'id' => 'level2']) !!}</div>
+									<div class="col-lg-3">{!! Form::select('level2', $niveisProfissionais, null, ['class' =>
+										'form-control ', 'id' => 'level2','placeholder' => 'Selecione um nivel']) !!}</div>
 							</div>
 						</div>
 
@@ -284,7 +265,7 @@
 					</div>
 				</div>
 			</div>
-	
+
 			<div class="row">
 				<div class="col-lg-12 ">{!!Form::submit('Procurar',['class' => 'btn
 					pull-right']); !!}</div>

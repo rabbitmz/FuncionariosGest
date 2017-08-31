@@ -19,10 +19,9 @@ class ProfessionalTableSeeder extends Seeder
     			'tipo_documento_id' => '1',
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
-    			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+    		  'data_validade_documento' => Carbon::parse('2020-01-01'),
     			'naturalidade_provincia_id' => '5',
-                        'naturalidade_distrito_id' => '5',
+          'naturalidade_distrito_id' => '5',
     			'endereco_provincia_id' => '5',
     			'distrito_id' => '1',
     			'cidade' => 'Maputo',
@@ -32,11 +31,11 @@ class ProfessionalTableSeeder extends Seeder
     			'celula' => str_random(10),
     			'casa' => str_random(10),
     			'tem_nivel_academico' => 1,
-                        'classe_id' => 12,
+          'classe_id' => 12,
     			'telefone' => '12345678901',
-    			'email' => str_random(10),    			
+    			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -45,9 +44,8 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
     			'naturalidade_provincia_id' => '5',
-                        'naturalidade_distrito_id' => '5',
+          'naturalidade_distrito_id' => '5',
     			'endereco_provincia_id' => '5',
     			'distrito_id' => '1',
     			'cidade' => 'Maputo',
@@ -57,11 +55,11 @@ class ProfessionalTableSeeder extends Seeder
     			'celula' => str_random(10),
     			'casa' => str_random(10),
     			'tem_nivel_academico' => 1,
-                        'classe_id' => 12,
+          'classe_id' => 12,
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'F',
@@ -70,7 +68,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '5',
     			'naturalidade_distrito_id' => '5',
                         'endereco_provincia_id' => '5',
@@ -86,7 +84,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -95,7 +93,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '5',
     			'naturalidade_distrito_id' => '3',
                         'endereco_provincia_id' => '5',
@@ -111,7 +109,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -120,7 +118,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -136,7 +134,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -145,7 +143,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -161,7 +159,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -170,7 +168,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -186,7 +184,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -195,7 +193,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -211,7 +209,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -220,7 +218,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -231,12 +229,12 @@ class ProfessionalTableSeeder extends Seeder
     			'quarteirao' => str_random(10),
     			'celula' => str_random(10),
     			'casa' => str_random(10),
-    			'tem_nivel_academico' => 1, 
+    			'tem_nivel_academico' => 1,
                         'classe_id' => 12,
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -245,7 +243,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -269,7 +267,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -285,7 +283,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -294,7 +292,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -310,7 +308,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -319,7 +317,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -335,7 +333,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -344,7 +342,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -360,7 +358,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -369,7 +367,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -385,7 +383,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -394,81 +392,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
-    			'naturalidade_provincia_id' => '1',
-                        'naturalidade_distrito_id' => '1',
-    			'endereco_provincia_id' => '1',
-    			'distrito_id' => '1',
-    			'cidade' => 'Montepuez',
-    			'bairro' => str_random(10),
-    			'rua' => str_random(10),
-    			'quarteirao' => str_random(10),
-    			'celula' => str_random(10),
-    			'casa' => str_random(10),
-    			'tem_nivel_academico' => 1,
-                        'classe_id' => 10,
-    			'telefone' => '12345678901',
-    			'email' => str_random(10),
-    	] );
-    	DB::table ( 'professional' )->insert ( [
-    			'nome' => str_random(10),
-    			'genero' => 'M',
-    			'data_nascimento' => Carbon::parse('1999-01-01'),
-    			'tipo_documento_id' => '1',
-    			'numero_documento' => str_random(13),
-    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
-    			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
-    			'naturalidade_provincia_id' => '1',
-                        'naturalidade_distrito_id' => '1',  
-    			'endereco_provincia_id' => '1',
-    			'distrito_id' => '1',
-    			'cidade' => 'Montepuez',
-    			'bairro' => str_random(10),
-    			'rua' => str_random(10),
-    			'quarteirao' => str_random(10),
-    			'celula' => str_random(10),
-    			'casa' => str_random(10),
-    			'tem_nivel_academico' => 1,
-                        'classe_id' => 10,
-    			'telefone' => '12345678901',
-    			'email' => str_random(10),
-    	] );
-    	
-    	DB::table ( 'professional' )->insert ( [
-    			'nome' => str_random(10),
-    			'genero' => 'M',
-    			'data_nascimento' => Carbon::parse('1999-01-01'),
-    			'tipo_documento_id' => '1',
-    			'numero_documento' => str_random(13),
-    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
-    			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
-    			'naturalidade_provincia_id' => '1',
-                        'naturalidade_distrito_id' => '1',
-    			'endereco_provincia_id' => '1',
-    			'distrito_id' => '1',
-    			'cidade' => 'Montepuez',
-    			'bairro' => str_random(10),
-    			'rua' => str_random(10),
-    			'quarteirao' => str_random(10),
-    			'celula' => str_random(10),
-    			'casa' => str_random(10),
-    			'tem_nivel_academico' => 1,
-                        'classe_id' => 10,
-    			'telefone' => '12345678901',
-    			'email' => str_random(10),
-    	] );
-    	
-    	DB::table ( 'professional' )->insert ( [
-    			'nome' => str_random(10),
-    			'genero' => 'M',
-    			'data_nascimento' => Carbon::parse('1999-01-01'),
-    			'tipo_documento_id' => '1',
-    			'numero_documento' => str_random(13),
-    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
-    			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -492,7 +416,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -508,7 +432,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -517,7 +441,32 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
+    			'naturalidade_provincia_id' => '1',
+                        'naturalidade_distrito_id' => '1',
+    			'endereco_provincia_id' => '1',
+    			'distrito_id' => '1',
+    			'cidade' => 'Montepuez',
+    			'bairro' => str_random(10),
+    			'rua' => str_random(10),
+    			'quarteirao' => str_random(10),
+    			'celula' => str_random(10),
+    			'casa' => str_random(10),
+    			'tem_nivel_academico' => 1,
+                        'classe_id' => 10,
+    			'telefone' => '12345678901',
+    			'email' => str_random(10),
+    	] );
+
+    	DB::table ( 'professional' )->insert ( [
+    			'nome' => str_random(10),
+    			'genero' => 'M',
+    			'data_nascimento' => Carbon::parse('1999-01-01'),
+    			'tipo_documento_id' => '1',
+    			'numero_documento' => str_random(13),
+    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
+    			'data_validade_documento' => Carbon::parse('2020-01-01'),
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -541,7 +490,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -557,7 +506,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -566,7 +515,56 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
+    			'naturalidade_provincia_id' => '1',
+                        'naturalidade_distrito_id' => '1',
+    			'endereco_provincia_id' => '1',
+    			'distrito_id' => '1',
+    			'cidade' => 'Montepuez',
+    			'bairro' => str_random(10),
+    			'rua' => str_random(10),
+    			'quarteirao' => str_random(10),
+    			'celula' => str_random(10),
+    			'casa' => str_random(10),
+    			'tem_nivel_academico' => 1,
+                        'classe_id' => 10,
+    			'telefone' => '12345678901',
+    			'email' => str_random(10),
+    	] );
+    	DB::table ( 'professional' )->insert ( [
+    			'nome' => str_random(10),
+    			'genero' => 'M',
+    			'data_nascimento' => Carbon::parse('1999-01-01'),
+    			'tipo_documento_id' => '1',
+    			'numero_documento' => str_random(13),
+    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
+    			'data_validade_documento' => Carbon::parse('2020-01-01'),
+
+    			'naturalidade_provincia_id' => '1',
+                        'naturalidade_distrito_id' => '1',
+    			'endereco_provincia_id' => '1',
+    			'distrito_id' => '1',
+    			'cidade' => 'Montepuez',
+    			'bairro' => str_random(10),
+    			'rua' => str_random(10),
+    			'quarteirao' => str_random(10),
+    			'celula' => str_random(10),
+    			'casa' => str_random(10),
+    			'tem_nivel_academico' => 1,
+                        'classe_id' => 10,
+    			'telefone' => '12345678901',
+    			'email' => str_random(10),
+    	] );
+
+    	DB::table ( 'professional' )->insert ( [
+    			'nome' => str_random(10),
+    			'genero' => 'M',
+    			'data_nascimento' => Carbon::parse('1999-01-01'),
+    			'tipo_documento_id' => '1',
+    			'numero_documento' => str_random(13),
+    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
+    			'data_validade_documento' => Carbon::parse('2020-01-01'),
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '3',
     			'endereco_provincia_id' => '1',
@@ -582,7 +580,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -591,81 +589,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
-    			'naturalidade_provincia_id' => '1',
-                        'naturalidade_distrito_id' => '3',
-    			'endereco_provincia_id' => '1',
-    			'distrito_id' => '1',
-    			'cidade' => 'Montepuez',
-    			'bairro' => str_random(10),
-    			'rua' => str_random(10),
-    			'quarteirao' => str_random(10),
-    			'celula' => str_random(10),
-    			'casa' => str_random(10),
-    			'tem_nivel_academico' => 1,
-                        'classe_id' => 10,
-    			'telefone' => '12345678901',
-    			'email' => str_random(10),
-    	] );
-    	DB::table ( 'professional' )->insert ( [
-    			'nome' => str_random(10),
-    			'genero' => 'M',
-    			'data_nascimento' => Carbon::parse('1999-01-01'),
-    			'tipo_documento_id' => '1',
-    			'numero_documento' => str_random(13),
-    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
-    			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
-    			'naturalidade_provincia_id' => '1',
-                        'naturalidade_distrito_id' => '3',
-    			'endereco_provincia_id' => '1',
-    			'distrito_id' => '1',
-    			'cidade' => 'Montepuez',
-    			'bairro' => str_random(10),
-    			'rua' => str_random(10),
-    			'quarteirao' => str_random(10),
-    			'celula' => str_random(10),
-    			'casa' => str_random(10),
-    			'tem_nivel_academico' => 1,
-                        'classe_id' => 10,
-    			'telefone' => '12345678901',
-    			'email' => str_random(10),
-    	] );
-    	
-    	DB::table ( 'professional' )->insert ( [
-    			'nome' => str_random(10),
-    			'genero' => 'M',
-    			'data_nascimento' => Carbon::parse('1999-01-01'),
-    			'tipo_documento_id' => '1',
-    			'numero_documento' => str_random(13),
-    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
-    			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
-    			'naturalidade_provincia_id' => '1',
-                        'naturalidade_distrito_id' => '3',
-    			'endereco_provincia_id' => '1',
-    			'distrito_id' => '1',
-    			'cidade' => 'Montepuez',
-    			'bairro' => str_random(10),
-    			'rua' => str_random(10),
-    			'quarteirao' => str_random(10),
-    			'celula' => str_random(10),
-    			'casa' => str_random(10),
-    			'tem_nivel_academico' => 1,
-                        'classe_id' => 10,
-    			'telefone' => '12345678901',
-    			'email' => str_random(10),
-    	] );
-    	
-    	DB::table ( 'professional' )->insert ( [
-    			'nome' => str_random(10),
-    			'genero' => 'M',
-    			'data_nascimento' => Carbon::parse('1999-01-01'),
-    			'tipo_documento_id' => '1',
-    			'numero_documento' => str_random(13),
-    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
-    			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '3',
     			'endereco_provincia_id' => '1',
@@ -689,7 +613,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '3',
     			'endereco_provincia_id' => '1',
@@ -705,7 +629,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -714,7 +638,81 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
+    			'naturalidade_provincia_id' => '1',
+                        'naturalidade_distrito_id' => '3',
+    			'endereco_provincia_id' => '1',
+    			'distrito_id' => '1',
+    			'cidade' => 'Montepuez',
+    			'bairro' => str_random(10),
+    			'rua' => str_random(10),
+    			'quarteirao' => str_random(10),
+    			'celula' => str_random(10),
+    			'casa' => str_random(10),
+    			'tem_nivel_academico' => 1,
+                        'classe_id' => 10,
+    			'telefone' => '12345678901',
+    			'email' => str_random(10),
+    	] );
+
+    	DB::table ( 'professional' )->insert ( [
+    			'nome' => str_random(10),
+    			'genero' => 'M',
+    			'data_nascimento' => Carbon::parse('1999-01-01'),
+    			'tipo_documento_id' => '1',
+    			'numero_documento' => str_random(13),
+    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
+    			'data_validade_documento' => Carbon::parse('2020-01-01'),
+
+    			'naturalidade_provincia_id' => '1',
+                        'naturalidade_distrito_id' => '3',
+    			'endereco_provincia_id' => '1',
+    			'distrito_id' => '1',
+    			'cidade' => 'Montepuez',
+    			'bairro' => str_random(10),
+    			'rua' => str_random(10),
+    			'quarteirao' => str_random(10),
+    			'celula' => str_random(10),
+    			'casa' => str_random(10),
+    			'tem_nivel_academico' => 1,
+                        'classe_id' => 10,
+    			'telefone' => '12345678901',
+    			'email' => str_random(10),
+    	] );
+    	DB::table ( 'professional' )->insert ( [
+    			'nome' => str_random(10),
+    			'genero' => 'M',
+    			'data_nascimento' => Carbon::parse('1999-01-01'),
+    			'tipo_documento_id' => '1',
+    			'numero_documento' => str_random(13),
+    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
+    			'data_validade_documento' => Carbon::parse('2020-01-01'),
+
+    			'naturalidade_provincia_id' => '1',
+                        'naturalidade_distrito_id' => '3',
+    			'endereco_provincia_id' => '1',
+    			'distrito_id' => '1',
+    			'cidade' => 'Montepuez',
+    			'bairro' => str_random(10),
+    			'rua' => str_random(10),
+    			'quarteirao' => str_random(10),
+    			'celula' => str_random(10),
+    			'casa' => str_random(10),
+    			'tem_nivel_academico' => 1,
+                        'classe_id' => 10,
+    			'telefone' => '12345678901',
+    			'email' => str_random(10),
+    	] );
+
+    	DB::table ( 'professional' )->insert ( [
+    			'nome' => str_random(10),
+    			'genero' => 'M',
+    			'data_nascimento' => Carbon::parse('1999-01-01'),
+    			'tipo_documento_id' => '1',
+    			'numero_documento' => str_random(13),
+    			'data_emissao_documento' => Carbon::parse('2015-01-01'),
+    			'data_validade_documento' => Carbon::parse('2020-01-01'),
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -730,7 +728,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -739,7 +737,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -763,7 +761,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -779,7 +777,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -788,7 +786,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -804,7 +802,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -813,7 +811,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -837,7 +835,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -853,7 +851,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -862,7 +860,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -878,7 +876,7 @@ class ProfessionalTableSeeder extends Seeder
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -887,7 +885,7 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
                         'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
@@ -899,11 +897,11 @@ class ProfessionalTableSeeder extends Seeder
     			'celula' => str_random(10),
     			'casa' => str_random(10),
     			'tem_nivel_academico' => 1,
-                        'classe_id' => 7,   
+                        'classe_id' => 7,
     			'telefone' => '12345678901',
     			'email' => str_random(10),
     	] );
-    	
+
     	DB::table ( 'professional' )->insert ( [
     			'nome' => str_random(10),
     			'genero' => 'M',
@@ -912,9 +910,9 @@ class ProfessionalTableSeeder extends Seeder
     			'numero_documento' => str_random(13),
     			'data_emissao_documento' => Carbon::parse('2015-01-01'),
     			'data_validade_documento' => Carbon::parse('2020-01-01'),
-    			
+
     			'naturalidade_provincia_id' => '1',
-                        'naturalidade_distrito_id' => '1',  
+                        'naturalidade_distrito_id' => '1',
     			'endereco_provincia_id' => '1',
     			'distrito_id' => '1',
     			'cidade' => 'Montepuez',
