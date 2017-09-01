@@ -8,12 +8,13 @@ class Professional extends Model
 {
     //
 	protected $table = 'professional';
-	
-	public function professions()
-	{
-		return $this->belongsToMany('App\Profissao','professional_profissao');
-	}
-	
+
+				public function profissoes()
+				{
+				return $this->belongsToMany(Profissao::class,'professional_profissao','professional_id','profissao_id')->withPivot('nivel_professional_id');
+					//return $this->belongsToMany(Profissao::class);
+				}
+
         public function TipoDocumento()
         {
             return $this->belongsTo(TipoDocumento::class);
@@ -28,7 +29,7 @@ class Professional extends Model
         {
             return $this->belongsTo(Provincia::class);
         }
-        
+
         public function NaturalidadeDistrito()
         {
             return $this->belongsTo(Distrito::class);
@@ -43,7 +44,7 @@ class Professional extends Model
         {
             return $this->belongsTo(Distrito::class);
         }
-        
+
         public function Classe()
         {
             return $this->belongsTo(Classe::class);

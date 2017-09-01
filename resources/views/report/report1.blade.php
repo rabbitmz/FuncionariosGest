@@ -196,12 +196,6 @@
 								<div class="col-lg-2">{!! Form::select('informalyearsOfExp',
 									(['0' => 'Selecione'] + $experiencesYears), null, ['class' =>
 									'form-control ', 'id' => 'informalyearsOfExp']) !!}</div>
-
-								<div class="col-lg-3">{!!
-									Form::select('informalyearsOfExpLevel', ['NONE' => 'Selecione o
-									nivel','MASTER' => 'Mestre', 'HELPER' => 'Ajudante','ASSISTANT'
-									=> 'Auxiliar'], null, ['class' => 'form-control ', 'id' =>
-									'informalyearsOfExpLevel']) !!}</div>
 							</div>
 						</div>
 						<div class="form-group">
@@ -220,15 +214,8 @@
 								<div class="col-lg-2">{!! Form::select('informalyearsOfExp2',
 									(['0' => 'Selecione'] + $experiencesYears), null, ['class' =>
 									'form-control ', 'id' => 'informalyearsOfExp2']) !!}</div>
-
-								<div class="col-lg-3">{!!
-									Form::select('informalyearsOfExpLevel2', ['NONE' => 'Selecione
-									o nivel','MASTER' => 'Mestre', 'HELPER' =>
-									'Ajudante','ASSISTANT' => 'Auxiliar'], null, ['class' =>
-									'form-control ', 'id' => 'informalyearsOfExpLevel2']) !!}</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 				<div class="panel panel-default">
@@ -244,8 +231,7 @@
 									Form::label('ltype1',trans('messages.collaborator.laboral.type').':',
 									['for' => 'type1' ]) !!}</div>
 								<div class="col-lg-3">{!! Form::select('type1',
-									['NONE'=>'Selecione um tipo','CONTRATADO' => 'Contratado',
-									'DESEMPREGADO' => 'Desempregado','AUTO' => 'Auto-emprego'],
+									['NONE'=>'Selecione um tipo','DESEMPREGADO' => 'Desempregado','AUTO' => 'Auto-emprego'],
 									null, ['class' => 'form-control ', 'id' => 'type1']) !!}</div>
 
 							</div>

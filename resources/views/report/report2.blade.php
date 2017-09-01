@@ -48,16 +48,13 @@
 							</tbody>
 						</table>
 						<div>
-							@foreach ($professional->professions as $profession)
+							@foreach ($professional->profissoes as $prof)
 							<div class="form-group required">
 								<label class="col-sm-3 control-label boldText">{{__('messages.collaborator.profession.primary')}}</label>
-								<label class="col-sm-3">{{ $profession->descricao }}</label> <label
+								<label class="col-sm-3">{{ $prof->descricao }}</label> <label
 									class="col-sm-3 control-label">
-									<span class="boldText">{{__('messages.collaborator.yearsOfExperience')}}</span></label>
-								<label class="col-sm-3">
-								{{  $profession->anosExperiencia($profession->data_inicio,$profession->data_fim)
-
-								 }}</label>
+									<span class="boldText">Nivel Profissional</span></label>
+								<label class="col-sm-3">{{App\Nivel_professional::find($prof->pivot->nivel_professional_id)->descricao	}}	</label>
 							</div>
 							@endforeach
 						</div>

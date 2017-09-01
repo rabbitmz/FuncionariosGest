@@ -23,21 +23,21 @@
 						<tr>
 							<th data-name="name">{{__('messages.collaborator.name') }}</th>
 							<th data-name="docId">{{__('messages.collaborator.identificationDocument.extended')}}
-							
-							
+
+
 							<th data-name="gender">{{__('messages.collaborator.gender')}}
-							
+
 							<th data-name="work1">{{__('messages.collaborator.profession.primary')}}
-							
-							
+
+
 							<th data-name="work2">{{__('messages.collaborator.profession.other')}}
-							
-							
+
+
 							<th data-name="provincia">{{__('messages.collaborator.citizenship')}}
-							
-							
+
+
 							<th data-name="city">{{__('messages.collaborator.city')}}
-						
+
 							<th data-name="id">visualizar</th>
 						</tr>
 					</thead>
@@ -47,8 +47,8 @@
 							<td>{{ $professional->nome }}</td>
 							<td>{{ $professional->numero_documento }}</td>
 							<td>{{ $professional->genero }}</td>
-							 @foreach ($professional->professions as $profession)
-							<td>{{ $profession->descricao }}</td>							
+							 @foreach ($professional->profissoes as $profession)
+							<td>{{ $profession->descricao }}</td>
 							 @endforeach
 								<td>{{ $professional->NaturalidadeProvincia->nome }}</td>
 							<td>{{ $professional->cidade}}</td>

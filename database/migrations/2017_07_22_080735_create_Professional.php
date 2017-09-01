@@ -16,6 +16,7 @@ class CreateProfessional extends Migration
         Schema::create('professional', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
+            $table->string('apelido');
             $table->string('genero')->length(1);
             $table->timestamp('data_nascimento')->nullable();
             $table->integer('tipo_documento_id')->unsigned();
@@ -41,27 +42,27 @@ class CreateProfessional extends Migration
             $table->string('email');
             $table->timestamps();
         });
-        
+
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('tipo_documento_id')->references('id')->on('tipo_documento');
         });
-        
+
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('naturalidade_provincia_id')->references('id')->on('provincia');
         });
-        
+
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('naturalidade_distrito_id')->references('id')->on('distrito');
         });
-        
+
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('endereco_provincia_id')->references('id')->on('provincia');
         });
-        
+
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('distrito_id')->references('id')->on('distrito');
         });
-        
+
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('classe_id')->references('id')->on('classe');
         });

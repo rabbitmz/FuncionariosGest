@@ -19,18 +19,27 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-lg-2">{!!
-							Form::label('lname',trans('messages.collaborator.name').' :',
+							Form::label('lname','Primeiro Nome :',
 							['for' => 'name' ]) !!}</div>
-						<div class="col-lg-6">{!! Form::text('name',null,['class' =>
+						<div class="col-lg-4">{!! Form::text('name',null,['class' =>
 							'form-control ', 'id' => 'name']) !!}</div>
-						<div class="col-lg-2	">{!!
-							Form::label('lgender',trans('messages.collaborator.gender').' :',
-							['for' => 'gender' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('gender', ['M' =>
-							'Masculino', 'F' => 'Feminino'], null, ['class' => 'form-control
-							', 'id' => 'gender']) !!}</div>
+							<div class="col-lg-2">{!!
+								Form::label('lsurname','Ultimo Nome :',
+								['for' => 'surname' ]) !!}</div>
+							<div class="col-lg-4">{!! Form::text('surname',null,['class' =>
+								'form-control ', 'id' => 'surname']) !!}</div>
 					</div>
 				</div>
+				<div class="form-group">
+					<div class="row">
+				<div class="col-lg-2	">{!!
+					Form::label('lgender',trans('messages.collaborator.gender').' :',
+					['for' => 'gender' ]) !!}</div>
+				<div class="col-lg-2">{!! Form::select('gender', ['M' =>
+					'Masculino', 'F' => 'Feminino'], null, ['class' => 'form-control
+					', 'id' => 'gender']) !!}</div>
+				</div>
+			</div>
 
 				<div class="form-group">
 					<div class="row">
@@ -43,7 +52,7 @@
 						<div class="col-lg-2">{!!Form::label('lIdentificationDocumentType',trans('messages.collaborator.identificationDocument.type').'
 							:', ['for' => 'identificationDocument' ]) !!}</div>
 						<div class="col-lg-2">
-                                                        {!! Form::select('documentype',$tipo_documento, null, 
+                                                        {!! Form::select('documentype',$tipo_documento, null,
                                                         ['class' => 'form-control ', 'id' => 'documentype']) !!}
 						</div>
 
@@ -80,12 +89,12 @@
 						<div class="col-lg-2">{!!
 							Form::label('lnationality',trans('messages.collaborator.course.school.province').'
 							:', ['for' => 'nationality' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('naturalidade_provincia',$naturalidade_provincias, null, 
+						<div class="col-lg-2">{!! Form::select('naturalidade_provincia',$naturalidade_provincias, null,
                                                     ['class' => 'form-control ', 'id' => 'naturalidade_provincia']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('ldistrict',trans('messages.collaborator.district').' :',
 							['for' => 'city' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('naturalidade_distrito',$naturalidade_distritos, null, 
+						<div class="col-lg-2">{!! Form::select('naturalidade_distrito',$naturalidade_distritos, null,
                                                     ['class' => 'form-control ', 'id' => 'naturalidade_distrito']) !!}</div>
 					</div>
 				</div>
@@ -104,7 +113,7 @@
 						<div class="col-lg-2">{!!
 							Form::label('laddressProv',trans('messages.collaborator.course.school.province').'
 							:', ['for' => 'addressProv' ]) !!}</div>
-						<div class="col-lg-4">{!! Form::select('endereco_provincia',$endereco_provincias, null, 
+						<div class="col-lg-4">{!! Form::select('endereco_provincia',$endereco_provincias, null,
                                                     ['class' => 'form-control ', 'id' => 'endereco_provincia']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('laddressCity',trans('messages.collaborator.city').'
@@ -119,7 +128,7 @@
 						<div class="col-lg-2">{!!
 							Form::label('llocality',trans('messages.collaborator.district').'
 							:', ['for' => 'nationality' ]) !!}</div>
-						<div class="col-lg-4">{!! Form::select('endereco_distrito',$endereco_distritos, null, 
+						<div class="col-lg-4">{!! Form::select('endereco_distrito',$endereco_distritos, null,
                                                     ['class' => 'form-control ', 'id' => 'endereco_distrito']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('lneighborhood',trans('messages.collaborator.neighborhood').'
@@ -203,7 +212,7 @@
 									<div class="col-lg-2">{!!
 										Form::label('lschooLevel',trans('messages.collaborator.school.level').'
 										:', ['for' => 'schooLevel' ]) !!}</div>
-									<div class="col-lg-3">{!! Form::select('classe',$classes, null, 
+									<div class="col-lg-3">{!! Form::select('classe',$classes, null,
                                                                         ['class' => 'form-control ', 'id' => 'classe']) !!}</div>
 								</div>
 							</div>

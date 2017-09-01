@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class ProfessionalSearch {
 	public static function apply(Request $filters) {
 		$query = (new Professional ())->newQuery ();
-
+		$query 	->with('profissoes');
 		if($filters->has("name"))
 		{
 		$query->where('nome', $filters->input('name'))
@@ -42,31 +42,52 @@ class ProfessionalSearch {
 			$query->where ( 'distrito_id', '=', $filters->input ( 'district' ));
 		}
 
-		if ($filters->has ( 'profession1' )) {
-			$query->leftJoin('professional_profissao','professional.id','=','professional_profissao.professional_id');
-			$query->where('professional_profissao.profissao_id', '=', $filters->input ( 'profession1' ));
+		if ($filters->has('profession1'))
+		{
+    		$query->whereHas('profissoes', function ($q) use ($filters) {
+        		$q->where('professional_profissao.primaria','=','1')->
+						where('profissao.id', $filters->input('profession1'));
+    				});
+		}
+
+		if ($filters->has('level1'))
+		{
+				$query->whereHas('profissoes', function ($q) use ($filters) {
+						$q->where('professional_profissao.primaria','=','1')->
+						where('professional_profissao.nivel_professional_id', $filters->input('level1'));
+						});
 		}
 
 
-// 		if($filters->has('ageMin') && strcmp($filters->input ('ageMin'),'0')!=0)
-// 		{
-// 			$minDateOfBirth = Carbon::now()->subYears($filters->input('ageMin'));
+		if ($filters->has ( 'profession2' )) {
 
-// 			$query->where( 'data_nascimento', '>=',"'".$minDateOfBirth->toDateString()."'" );
+			$query->whereHas('profissoes', function ($q) use ($filters) {
+					$q->where('professional_profissao.primaria','=','0')->
+					where('profissao.id', $filters->input('profession2'));
+					});
+			}
 
+			if ($filters->has('level2'))
+			{
+					$query->whereHas('profissoes', function ($q) use ($filters) {
+							$q->where('professional_profissao.primaria','=','0')->
+							where('professional_profissao.nivel_professional_id', $filters->input('level2'));
+							});
 
-// 		}
-// 		if($filters->has('ageMax')  && strcmp($filters->input ('ageMax'),'0')!=0)
-// 		{
+			}
 
-// 			$maxDateOfBirth = Carbon::now()->subYears($filters->input('ageMax'));
-// 			$query->where( 'data_nascimento', '<=',"'".$maxDateOfBirth->toDateString()."'");
+//			if($filters->has('ageMax')  && strcmp($filters->input ('ageMax'),'0')!=0)
+	//	 		{
+	//	 			$maxDateOfBirth = Carbon::now()->subYears($filters->input('ageMax'));
+	//	 			$query->whereDate( 'data_nascimento', '<=',"'".$maxDateOfBirth->toDateString()."'");
+		// 		}
 
-// 		}
-
-
+ 		//if($filters->has('ageMin') && strcmp($filters->input ('ageMin'),'0')!=0)
+ 		//{
+ 		//	$minDateOfBirth = Carbon::now()->subYears($filters->input('ageMin'));
+ 		//	$query->whereDate('data_nascimento', '>=',"'".$minDateOfBirth->toDateString()."'");
+		//}
 		$result = $query->get ();
-
 		return $result;
 	}
 }
