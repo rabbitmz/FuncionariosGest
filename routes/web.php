@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Input;
 /*
  * |--------------------------------------------------------------------------
  * | Web Routes
@@ -36,7 +37,7 @@ Route::get("/viewColaborator", ['as' => 'viewColaborator', 'uses' => 'Colaborato
 Route::post("/viewColaborator/page2", ['uses' => 'ColaboratorController@getColaboratorByNameOrDocumentIdentification']);
 Route::get("/showColaborator/{id}", ['as' => 'showColaborator', 'uses' => 'ColaboratorController@show']);
 
-//Edit Colaborator 
+//Edit Colaborator
 Route::get("/editColaborator", ['as' => 'editEmployee', 'uses' => 'ColaboratorController@getEditColaboratorSearchView']);
 Route::post("/editColaborator/page2", ['uses' => 'ColaboratorController@getColaboratorByNameOrDocumentIdentificationEdit']);
 Route::get("/editColaborator/{id}", ['as' => 'editColaborator', 'uses' => 'ColaboratorController@edit']);
@@ -52,3 +53,14 @@ Route::get("/report", ['uses' => 'ReportController@index']);
 Route::post('/search',['uses' => 'ReportController@filter']);
 Route::get('/download',['as'=>'downloadPdf','uses' => 'ReportController@downloadPdf']);
 
+Route::get('/ajax-call', function(){
+    $id = Input::get('provincia_id');
+    $distritos = \App\Distrito::where('provincia_id', '=', $id )->get();
+    return Response::json($distritos);
+});
+
+Route::get('/ajax-admPost', function(){
+    $id = Input::get('distrito_id');
+    $adms = \App\Posto_administrativo::where('distrito_id', '=', $id )->get();
+    return Response::json($adms);
+});

@@ -50,7 +50,7 @@
 						<div>
 							@foreach ($professional->profissoes as $prof)
 							<div class="form-group required">
-								<label class="col-sm-3 control-label boldText">{{__('messages.collaborator.profession.primary')}}</label>
+								<label class="col-sm-3 control-label boldText">Profissão</label>
 								<label class="col-sm-3">{{ $prof->descricao }}</label> <label
 									class="col-sm-3 control-label">
 									<span class="boldText">Nivel Profissional</span></label>

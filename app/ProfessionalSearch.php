@@ -15,6 +15,11 @@ class ProfessionalSearch {
 		$query->where('nome', $filters->input('name'))
 		->orWhere('nome', 'like', '%' . $filters->input('name'). '%')->get();
 		}
+		if($filters->has("surname"))
+		{
+		$query->where('apelido', $filters->input('surname'))
+		->orWhere('apelido', 'like', '%' . $filters->input('surname'). '%')->get();
+		}
 		if($filters->has("docNumber"))
 		{
 		$query->where('numero_documento', $filters->input('docNumber'));

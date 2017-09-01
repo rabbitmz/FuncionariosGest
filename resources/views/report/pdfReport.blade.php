@@ -70,9 +70,9 @@ body {
 			<th>Provincia</th>
 			<th>Cidade</th>
 			<th>Profissão Primaria</th>
-			<th>Anos de Experiencia</th>
+			<th>Nivel Profissional</th>
 			<th>Profissão secundaria</th>
-			<th>Anos de Experiencia</th>
+			<th>Nivel Profissional</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -88,6 +88,7 @@ body {
 			<td>{{ $professional->cidade }}</td>
 			@foreach ($professional->profissoes as $profession)
 			<td>{{ $profession->descricao }}</td>
+			<td>{{App\Nivel_professional::find($profession->pivot->nivel_professional_id)->descricao	}}</td>
      @endforeach
 
 		</tr>

@@ -63,6 +63,7 @@ class CreateProfessional extends Migration
             $table->foreign('distrito_id')->references('id')->on('distrito');
         });
 
+
         Schema::table('professional', function(Blueprint $table) {
             $table->foreign('classe_id')->references('id')->on('classe');
         });

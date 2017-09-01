@@ -22,6 +22,7 @@
 					<thead>
 						<tr>
 							<th data-name="name">{{__('messages.collaborator.name') }}</th>
+								<th data-name="name">apelido</th>
 							<th data-name="docId">{{__('messages.collaborator.identificationDocument.extended')}}
 
 
@@ -45,6 +46,7 @@
 						@foreach ($professionals as $professional)
 						<tr>
 							<td>{{ $professional->nome }}</td>
+							<td>{{ $professional->apelido }}</td>
 							<td>{{ $professional->numero_documento }}</td>
 							<td>{{ $professional->genero }}</td>
 							 @foreach ($professional->profissoes as $profession)

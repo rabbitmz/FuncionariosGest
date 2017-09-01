@@ -30,7 +30,7 @@ class ColaboratorController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -42,7 +42,7 @@ class ColaboratorController extends Controller
     public function store(Request $request)
     {
         //
-        
+
     }
 
     /**
@@ -54,8 +54,8 @@ class ColaboratorController extends Controller
     public function show($id)
     {
     	$professional = Professional::find($id);
-    	
-        //get colaborator by id 
+
+        //get colaborator by id
     	return view("viewColaborator.viewColaborator3",compact('professional'));
     }
 
@@ -92,10 +92,10 @@ class ColaboratorController extends Controller
     public function destroy($id)
     {
         //
-    }    
-  
+    }
+
     public function colaboratorForm()
-    {      
+    {
         return view('colaborator.create', [
             'tipo_documento' => Tipo_documento::orderBy('id','asc')->pluck('descricao','id'),
             'naturalidade_provincias' => Provincia::pluck('nome','id'),
@@ -105,11 +105,11 @@ class ColaboratorController extends Controller
             'classes' => Classe::orderBy('id','asc')->pluck('descricao','id'),
         ]);
     }
-    
+
     public function storeColaboratorForm(Request $request)
     {
        $professional= new Professional;
-       
+
         $professional->nome=$request->name;
         $professional->genero=$request->input('gender');
         $professional->data_nascimento=$request->birthDate;
@@ -134,13 +134,13 @@ class ColaboratorController extends Controller
         $professional->classe_id=$request->input('classe');
         $professional->telefone=$request->phoneNumber;
         $professional->email=$request->email;
-        
+
         $professional->save();
-        
-        return redirect('/createColaborator/page1'); 
-        
+
+        return redirect('/createColaborator/page1');
+
     }
-    
+
     public function onPageOne(Request $request)
     {
     	return view("colaborator.create1");
@@ -163,19 +163,19 @@ class ColaboratorController extends Controller
     }
     public function onPageSix(Request $request)
     {
-    	//Save na base	
+    	//Save na base
     	return view("colaborator.create6");
     }
-    
+
     public function getViewColaboratorSearchView()
     {
     	return view("viewColaborator.viewColaborator1");
-    } 
-    
+    }
+
     public function getColaboratorByNameOrDocumentIdentification(Request $request)
-    {	
+    {
     	$search = false;
-    	
+
     	if($request->has("name"))
     	{
     		$this->validate($request, [
@@ -183,7 +183,15 @@ class ColaboratorController extends Controller
     		]);
     		$search = true;
     	}
-    	
+
+      if($request->has("surname"))
+      {
+        $this->validate($request, [
+            'surname' => 'bail|regex:/^[a-zA-Z]+$/u|max:255|min:3',
+        ]);
+        $search = true;
+      }
+
     	if($request->has("docNumber"))
     	{
     		$this->validate($request, [
@@ -193,23 +201,23 @@ class ColaboratorController extends Controller
     	}
     	if($search)
     	{
-    		$professionals= ProfessionalSearch::apply($request);		
+    		$professionals= ProfessionalSearch::apply($request);
     	}
-    	else 
+    	else
     	{
     		return view("viewColaborator.viewColaborator1");
     	}
     	return view("viewColaborator.viewColaborator2",compact('professionals'));
     }
-	
+
 	//edit
     public function getEditColaboratorSearchView()
     {
     	return view("editColaborator.editColaborator1");
-    } 
+    }
     public function getColaboratorByNameOrDocumentIdentificationEdit(Request $request)
     {
-    		
+
     	return view("editColaborator.editColaborator2");
     }
     public function onEditPageFour(Request $request)
@@ -237,6 +245,6 @@ class ColaboratorController extends Controller
     	//Save na base
     	return view("editColaborator.editColaborator9");
     }
-    
+
 
 }

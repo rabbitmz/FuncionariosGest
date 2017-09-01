@@ -26,7 +26,7 @@
 				<ul class="nav navbar-nav">
 					<li class="dropdown">
 					<a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">{{ __('messages.employeeManagement') }} 
+						data-toggle="dropdown" href="#">{{ __('messages.employeeManagement') }}
 						<span class="caret">
 						</span>
 					</a>
@@ -46,7 +46,7 @@
 	</nav>
 
 	<div class="container">@yield('content')</div>
-
+	
 	<!-- jQuery -->
 	<script src="{{ asset('js/app.js') }}"></script>
 	<script src="{{ asset('bootstrap-datepicker-1.6.4/js/bootstrap-datepicker.min.js') }}"></script>

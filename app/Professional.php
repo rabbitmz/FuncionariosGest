@@ -17,7 +17,7 @@ class Professional extends Model
 
         public function TipoDocumento()
         {
-            return $this->belongsTo(TipoDocumento::class);
+            return $this->belongsTo(Tipo_documento::class);
         }
 
         public function Nacionalidade()

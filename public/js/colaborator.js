@@ -8,40 +8,40 @@ $(document).ready(function(){
 			{
 				$("#educationLevelSection").hide();
 			}
-	});	
-	
+	});
+
     $('#birthDate').datepicker({
         maxViewMode: 1,
-        orientation: "bottom auto"        
+        orientation: "bottom auto"
     });
-	
+
     $('#dateValid').datepicker({
         maxViewMode: 1,
-        orientation: "bottom auto"        
+        orientation: "bottom auto"
     });
-	
+
     $('#dateIssue').datepicker({
         maxViewMode: 1,
-        orientation: "bottom auto"        
+        orientation: "bottom auto"
     });
-    
+
     $('#contractStartDate').datepicker({
         maxViewMode: 1,
-        orientation: "bottom auto"        
+        orientation: "bottom auto"
     });
-    
+
     $('#unemployedStartDate').datepicker({
         maxViewMode: 1,
-        orientation: "bottom auto"        
+        orientation: "bottom auto"
     });
-    
+
     // Tipo de contrato laborarl
 	$('#type1').on('change',function(){
 		if(this.value=='CONTRATADO')
 			{
 				$("#laboralContractedTypeData").show();
 				$("#laboralUnemployedTypeData").hide();
-				
+
 			}
 		else
 			if(this.value=='DESEMPREGADO')
@@ -53,11 +53,11 @@ $(document).ready(function(){
 				{
 					$("#laboralContractedTypeData").hide();
 					$("#laboralUnemployedTypeData").hide();
-		
+
 				}
-	});	
-	
-    
+	});
+
+
     // EDITOR TABLE
     var $modal = $('#editor-modal'),
 	$editor = $('#editor'),
@@ -111,4 +111,49 @@ $(document).ready(function(){
 		}
 		$modal.modal('hide');
 	});
+
+
+	$('#naturalidade_provincia').on('change', function(e) {
+
+			var provincia_id = e.target.value;
+
+			//ajax
+			$.getJSON("/ajax-call?provincia_id="+provincia_id, function (data) {
+
+//console.log(data);
+					$('#naturalidade_distrito').empty();
+					$.each(data, function(index, distritoObj){
+							$('#naturalidade_distrito').append('<option value="'+distritoObj.id+'">'+distritoObj.nome+'</option>');
+					});
+			});
+	});
+
+		$('#endereco_provincia').on('change', function(e) {
+
+				var provincia_id = e.target.value;
+							//ajax
+				$.getJSON("/ajax-call?provincia_id="+provincia_id, function (data) {
+
+	//console.log(data);
+						$('#endereco_distrito').empty();
+						$.each(data, function(index, distritoObj){
+								$('#endereco_distrito').append('<option value="'+distritoObj.id+'">'+distritoObj.nome+'</option>');
+						});
+				});
+		});
+
+		$('#endereco_distrito').on('change', function(e) {
+
+				var distrito_id = e.target.value;
+							//ajax
+				$.getJSON("/ajax-admPost?distrito_id="+distrito_id, function (data) {
+
+	//console.log(data);
+						$('#admPost').empty();
+						$.each(data, function(index, distritoObj){
+								$('#admPost').append('<option value="'+distritoObj.id+'">'+distritoObj.nome+'</option>');
+						});
+				});
+		});
+
 	});

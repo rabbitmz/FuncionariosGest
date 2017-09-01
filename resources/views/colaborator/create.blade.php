@@ -52,17 +52,14 @@
 						<div class="col-lg-2">{!!Form::label('lIdentificationDocumentType',trans('messages.collaborator.identificationDocument.type').'
 							:', ['for' => 'identificationDocument' ]) !!}</div>
 						<div class="col-lg-2">
-                                                        {!! Form::select('documentype',$tipo_documento, null,
+                    {!! Form::select('documentype',$tipo_documento, null,
                                                         ['class' => 'form-control ', 'id' => 'documentype']) !!}
 						</div>
 
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="row">
-
-
-						<div class="col-lg-2">{!!
+					<div class="row">						<div class="col-lg-2">{!!
 							Form::label('lIdentificationDocument',trans('messages.collaborator.identificationDocument').'
 							:', ['for' => 'identificationDocument' ]) !!}</div>
 						<div class="col-lg-2">{!!
@@ -85,7 +82,6 @@
 
 				<div class="form-group">
 					<div class="row">
-
 						<div class="col-lg-2">{!!
 							Form::label('lnationality',trans('messages.collaborator.course.school.province').'
 							:', ['for' => 'nationality' ]) !!}</div>
@@ -94,7 +90,7 @@
 						<div class="col-lg-2">{!!
 							Form::label('ldistrict',trans('messages.collaborator.district').' :',
 							['for' => 'city' ]) !!}</div>
-						<div class="col-lg-2">{!! Form::select('naturalidade_distrito',$naturalidade_distritos, null,
+						<div class="col-lg-2">{!! Form::select('naturalidade_distrito',$naturalidade_provincias, null,
                                                     ['class' => 'form-control ', 'id' => 'naturalidade_distrito']) !!}</div>
 					</div>
 				</div>
@@ -115,21 +111,31 @@
 							:', ['for' => 'addressProv' ]) !!}</div>
 						<div class="col-lg-4">{!! Form::select('endereco_provincia',$endereco_provincias, null,
                                                     ['class' => 'form-control ', 'id' => 'endereco_provincia']) !!}</div>
-						<div class="col-lg-2">{!!
-							Form::label('laddressCity',trans('messages.collaborator.city').'
-							:', ['for' => 'addressProv' ]) !!}</div>
-						<div class="col-lg-4">{!! Form::text('addressCity',null,['class' =>
-							'form-control ', 'id' => 'addressCity']) !!}</div>
+
+
+																										<div class="col-lg-2">{!!
+																											Form::label('llocality',trans('messages.collaborator.district').'
+																											:', ['for' => 'nationality' ]) !!}</div>
+																										<div class="col-lg-4">{!! Form::select('endereco_distrito',$endereco_distritos, null,
+																																														['class' => 'form-control ', 'id' => 'endereco_distrito']) !!}</div>
+
+
+
+
 
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="row">
-						<div class="col-lg-2">{!!
-							Form::label('llocality',trans('messages.collaborator.district').'
-							:', ['for' => 'nationality' ]) !!}</div>
-						<div class="col-lg-4">{!! Form::select('endereco_distrito',$endereco_distritos, null,
-                                                    ['class' => 'form-control ', 'id' => 'endereco_distrito']) !!}</div>
+
+						<div class="col-lg-2">{!!	Form::label('ladmPost','Posto Administrativo :', ['for' => 'admPost' ]) !!}</div>
+
+					<div class="col-lg-4">{!! Form::select('admPost',$endereco_distritos, null,
+																									['class' => 'form-control ', 'id' => 'admPost']) !!}</div>
+
+
+					<div class="col-lg-2">{!!	Form::label('laddressCity','Localidade:', ['for' => 'addressProv' ]) !!}</div>
+					<div class="col-lg-4">{!! Form::text('addressCity',null,['class' =>	'form-control ', 'id' => 'addressCity']) !!}</div>
 						<div class="col-lg-2">{!!
 							Form::label('lneighborhood',trans('messages.collaborator.neighborhood').'
 							:', ['for' => 'neighborhood' ]) !!}</div>
@@ -254,4 +260,5 @@
 </div>
 @endsection @section('scripts')
 <script src="{{ asset('js/colaborator.js') }}"></script>
+
 @endsection
